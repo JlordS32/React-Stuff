@@ -38,7 +38,6 @@ const main = (
         <strong>
           <em>react.js</em>
         </strong>
-        :
       </p>
       <ul>
         {techsFormatted}
