@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Carlito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carlito&family=Oswald:wght@200&display=swap');
+
 * {
 box-sizing: border-box;
     padding: 0;
@@ -11,11 +14,16 @@ height: 100%;
     font-family: 'Montserrat';
     font-weight: 300;
     color: black;
+    background-color: var(--light-grey);
 }
 
 :root {
     --light-blue: #c2e6f4;
     --light-pink: #f37474;
+    --Carlito: 'Carlito', sans-serif;
+    --Oswold: 'Oswald', sans-serif;
+    --light-grey: #f0f1f7;
+    --cyan: #2acfcf;
 }
 
 .root {
@@ -80,18 +88,25 @@ footer {
     line-height: 60px;
 }
 
+.body-container {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
 .frontEndImg {
     display: flex;
     width: auto !important;
     height: 150px;
     margin: 20px;
-    margin-bottom: 30px;
     justify-content: center;
 }
 
 .frontEndImg img {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px 0 20px;
 }
 
 .frontEnd-container h2 {
@@ -101,5 +116,114 @@ footer {
 }
 
 .frontEnd-container {
-    margin-top: 18%;
+    margin: 100px 0;
+}
+
+.subscription-box {
+    height: 300px;
+    width: 60%;
+    background-color: var(--light-blue);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.subscription-box h1 {
+    font-family: var(--Oswold);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 1em;
+}
+
+.subscription-box p {
+    font-weight: 500;
+    margin: 2em 0 3em 0;
+}
+
+.subscription-box input {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: 0;
+    width: 200px;
+    height: 3em;
+    border-radius: 10px;
+    text-indent: 15px;
+}
+
+.subscription-box input::placeholder {
+    opacity: 0.7;
+    margin-left: 10px;
+    text-indent: 15px;
+}
+
+.subscription-box button {
+    background-color: var(--light-pink);
+    margin-top: 15px;
+    padding: 13px;
+    width: 25%;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+    border: 0;
+    color: white;
+    border-radius: 10px;
+}
+
+.subscription-box button:hover {
+    opacity: 0.8;
+}
+
+.subscription-box button:active {
+    background-color: #fff;
+    color: black;
+    border: 1px black solid;
+}
+
+.userCard {
+    width: 100% !important;
+    height: auto;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.userCard-container {
+    background-color: #fff;
+    height: 100%;
+    width: 60%;
+    display: flex !important;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.author-details,
+.skills-container,
+.joined-date {
+    margin: 25px 50px;
+}
+
+.author-details img {
+    height: auto;
+    width: 200px;
+    border-radius: 100%;
+}
+
+.author-details h3 {
+    margin-top: 1em;
+    font-size: 15px;
+}
+
+.person-name {
+    display: flex;
+    margin-top: 10px;
+}
+
+.person-name img {
+    height: auto;
+    width: 20px;
+    margin-left: 5px;
+}
+
+.person-name h2 {
+    font-weight: 500;
 }
