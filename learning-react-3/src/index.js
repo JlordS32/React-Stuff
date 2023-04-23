@@ -1,31 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const skills = [
-  ['HTML', 10],
-  ['CSS', 7],
-  ['JavaScript', 9],
-  ['React', 8],
-]
+const Numbers = ({ numbers }) => {
+  const list = numbers.map((number) => {
+    return <li key={number}>{number}</li>
+  })
 
-const Skill = ({skill: [tech, level]}) => (
-  <li>
-    {tech} {level}
-  </li>
-)
-
-const Skills = ({skills}) => {
-  const skillsList = skills.map((skill) => 
-  <Skill skill={skill} />);
-  return <ul>{skillsList}</ul>
+  return list;
 }
 
 const App = () => {
+  const numbers = [1, 2, 3, 4, 5, 6]
+
   return (
     <div className='container'>
       <div>
-        <h1>Skills Level</h1>
-        <Skills skills={skills} />
+      <h1>Number List</h1>
+      <Numbers numbers={numbers} />
       </div>
     </div>
   )
