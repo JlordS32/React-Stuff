@@ -1,3 +1,7 @@
+# Creator's note
+Looks good when viewed from computer but terrible when viewed from phone. Would love to optimize this, but I'll do it later when I know more about React. Adios!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
