@@ -1,6 +1,6 @@
 # Creator's note
 Looks good when viewed from computer but terrible when viewed from phone. Would love to optimize this, but I'll do it later when I know more about React. Adios!
-
+Date: 23/04/2023
 
 # Getting Started with Create React App
 
