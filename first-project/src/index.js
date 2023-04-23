@@ -1,11 +1,14 @@
 // index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// Image imports
 import personImage from './images/jaylou.jpg';
 import cssLogo from './images/css_logo.png';
 import htmlLogo from './images/html_logo.png';
 import reactLogo from './images/react_logo.png';
 import checkIcon from './images/checkicon.svg';
+import clockIcon from './images/clock.svg';
 
 
 // JSX element, header
@@ -18,6 +21,10 @@ const author = {
 }
 const date = 'Oct 2, 2020';
 const copyRight = 'Copyright 2020';
+
+// Skills
+const skillList = ['HTML', 'CSS', 'Sass', 'JavaScript', 'Redux', 'MongoDB', 'Python', 'Flask', 'Django', 'Numpy', 'Pandas', 'Data Analysis', 'SQL', 'GraphQL', 'D3.js', 'Gatsby', 'Docker', 'Heroku', 'Git']
+const skillListFormatted = skillList.map((skill) => <div className='skillTag'>{skill}</div>)
 
 // JSX element, header
 const header = (
@@ -71,23 +78,25 @@ const subscriptionbox = (
 const userCard = (
   <div class='userCard'>
     <div class='userCard-container'>
-      <div className='author-details'>
-        <img src={personImage} alt='Author Image'/>
-        <div className='person-name'>
-          <h2>{author.firstName} {author.lastName}</h2>
-          <img src={checkIcon} alt='Check Icon'/>
+      <div class='userCard-layout'>
+        <div className='author-details'>
+          <img src={personImage} alt='Author Image'/>
+          <div className='person-name'>
+            <h2>{author.firstName} {author.lastName}</h2>
+            <img src={checkIcon} alt='Check Icon'/>
+          </div>
+          <h3>Senior Developer, Finland</h3>
         </div>
-        <h3>Senior Developer, Finland</h3>
-      </div>
-      <div className='skills-container'>
-        <h2>Skills</h2>
-        <div className='skillsTag-container'>
-          <div>HTML</div>
-          <div>Sass</div>
+        <div className='skills-container'>
+          <h2>Skills</h2>
+          <div className='skillsTag-container'>
+            {skillListFormatted}
+          </div>
         </div>
-      </div>
-      <div className='joined-date'>
-        <p></p>
+        <div className='joined-date'>
+          <img src={clockIcon} alt='Clock Icon'/>
+          <p>Joined on April 23, 2023</p>
+        </div>
       </div>
     </div>
   </div>
