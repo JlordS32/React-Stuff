@@ -30,7 +30,7 @@ const Number = () => {
   const handleClick = (index) => {
     const generatedColor = generateRandomHexColor();
     boxes[index].style.backgroundColor = generatedColor;
-    spanRefs.current[index].textContent = generatedColor;
+    spanRefs.current[index].textContent = '';
   };
 
   for (let i = 0; i <= 31; i++) {
