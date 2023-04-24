@@ -1,17 +1,42 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Box = () => {
+  const boxes = [];
+  
+  for (let i = 0; i < 31; i++) {
+    boxes.push(<div key={i} className='box'>{i}</div>);
+  }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  return <div>{boxes}</div>;
+};
+
+const Boxes = () => {
+  return (
+    <div className='box-container'>
+      <Box />
+    </div>
+  )
+}
+
+const Header = () => {
+  return (
+    <header className='header-container'>
+      <h1>Hello World!</h1>
+    </header>
+  );
+};
+
+const App = () => {
+  return (
+    <div className='app'>
+      <div className='container'>
+        <Header />
+        <Boxes />
+      </div>
+    </div>
+  );
+};
+
+const root = document.getElementById('root');
+ReactDOM.render(<App />, root);
