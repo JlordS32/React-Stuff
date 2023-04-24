@@ -61,17 +61,27 @@ const Boxes = () => {
   );
 };
 
+const Footer = (data) => {
+  return (
+    <footer className='footer-container'>
+      <p>&copy; {data.copyright}</p>
+    </footer>
+  )
+}
+
 const App = () => {
   const data = {
     title: '30 Days Of React',
     subtitle: 'Hex Color Generator',
+    footer: 'Copyright 2023',
   };
 
   return (
     <div className="app">
       <div className="container">
         <Header data={data} />
-        <Boxes />
+        <Boxes/>
+        <Footer copyright={data.footer} />
       </div>
     </div>
   );
