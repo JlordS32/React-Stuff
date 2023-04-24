@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+:root {
+    --Roboto: 'Roboto', sans-serif;
+    --OpenSans: 'Open Sans', sans-serif;
+    --Bruno: 'Bruno Ace SC', cursive;
+    --Montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 50px;
+}
+
+header {
+    margin-top: 50px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--Montserrat);
+    font-size: 50px;
+}
+
+header h2 {
+    font-family: var(--Montserrat);
+}
+
+.body-container {
+    margin-top: 50px;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.country {
+    margin: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.country span {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--Montserrat);
+    font-weight: 700;
+}
+
+.country-bar {
+    width: 70%;
+    background-color: #ffa500;
+    height: 40px;
+    margin: 12.5px 5px;
+    border-radius: 15px;    
+}
+
+.number-population {
+    margin-left: 10px;
+    max-width: 150px;
+    width: 100%;
+}
+
+.country-name {
+    margin-right: 30px;
+    max-width: 150px;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    html {
+      zoom: 0.55;
+      transform: scale(0.9);
+      transform-origin: top;
+    }
+  }
