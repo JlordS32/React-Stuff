@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+:root {
+    --Roboto: 'Roboto', sans-serif;
+    --OpenSans: 'Open Sans', sans-serif;
+    --Bruno: 'Bruno Ace SC', cursive;
+    --Montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    text-align: center;
+}
+
+.header-container h1 {
+    font-size: 50px;
+    font-family: var(--Montserrat);
+}
+
+.header-container h2 {
+    font-size: 30px;
+    font-family: var(--OpenSans);
+}
+
+.boxes-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1136px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.numbered-box {
+    width: 140px;
+    height: 140px;
+    background-color: lightblue;
+    margin: 1px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.numbered-box span {
+    color: white;
+    font-family: var(--Roboto);
+    font-size: 20px;
+    line-height: 1;
+}
