@@ -51,10 +51,30 @@ body {
     width: 140px;
     height: 140px;
     background-color: lightblue;
-    margin: 1px;
+    margin: 10px;
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    transition: transform 3s;
+    border-radius: 100%;
+    box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.2);
+}
+  
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+  
+.numbered-box:active {
+    animation: pulse 0.3s;
+}
+
+.numbered-box:hover {
+    opacity: 80%;
 }
 
 .numbered-box span {
@@ -62,4 +82,5 @@ body {
     font-family: var(--Roboto);
     font-size: 20px;
     line-height: 1;
+    text-transform: uppercase;
 }
