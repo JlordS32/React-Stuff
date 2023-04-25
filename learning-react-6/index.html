@@ -2,10 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/react.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Conditional statements</title>
   </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .login-container input {
+      margin: 5px;
+      width: 200px;
+      height: 30px;
+      text-indent: 10px;
+    }
+
+    .signin-textbox {
+      margin-bottom: 20px;
+    }
+
+    .login-container button {
+      width: 100px;
+      height: 30px;
+      background-color: aqua;
+      border: 0;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .login-container button:hover {
+      opacity: 70%;
+    }
+
+    .login-container button:active {
+      background-color: white;
+      color: black;
+      border: aqua 1px solid;
+    }
+  </style>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
