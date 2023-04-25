@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Image imports
-import personImage from './images/jaylou.jpg';
+import personImage from './images/asabeneh.jpg';
 import cssLogo from './images/css_logo.png';
 import htmlLogo from './images/html_logo.png';
 import reactLogo from './images/react_logo.png';
