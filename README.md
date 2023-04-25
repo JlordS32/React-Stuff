@@ -12,4 +12,4 @@ Also, I'll be skipping some of the tutorials, partly due to me knowing them alre
 
 Enjoy your time looking around!
 
-[img](https://i.pinimg.com/originals/85/9a/f7/859af748d1eed0d67d5801a6df188a89.jpg)
+![img](https://i.pinimg.com/originals/85/9a/f7/859af748d1eed0d67d5801a6df188a89.jpg)
