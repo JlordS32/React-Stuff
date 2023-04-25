@@ -1,4 +1,4 @@
-# Creators Note:
+# Creators' Note:
 
 Really cool hex generator for you. It will randomly generate a new hex code if you click one of the circles.
 
