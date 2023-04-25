@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { tenHighestPopulation } from './population.js';
 
-const [world, china, india, usa, indonesia, brazil, pakistan, nigeria, bangladesh, russia, japan] = tenHighestPopulation;
+const worldPopulation = tenHighestPopulation[0].population;
 
 const Header = ({
   data: {
@@ -18,6 +18,14 @@ const Header = ({
   )
 }
 
+function calculatePercentage (percentage) {
+  
+  const calculatedPercentage = percentage/worldPopulation * 100;
+  const formattedPercentage = `${calculatedPercentage}%`
+
+  return formattedPercentage;
+}
+
 const Countries = () => {
   return (
     tenHighestPopulation.map((country) => {
@@ -26,11 +34,11 @@ const Countries = () => {
         <span className='country-name'>
           {country.country}
         </span>
-        {country.country === 'World' ? (
-          <div className='country-bar' style={{backgroundColor: '#FF5733'}}></div>
-        ) : (
-          <div className='country-bar'></div>
-        )}
+
+        <div className='country-bar'>
+          <div className='bar' style={{width: calculatePercentage(country.population)}}></div>
+        </div>
+
         <span className='number-population'>
           {country.population.toLocaleString('en-US')}
         </span>
