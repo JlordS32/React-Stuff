@@ -2,6 +2,8 @@
 
 ![Alt text](Screenshot%202023-04-25%20104945.png)
 
+Just a simple world population graph.
+
 ## Available Scripts
 
 In the project directory, you can run:
