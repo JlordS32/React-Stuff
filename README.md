@@ -11,3 +11,5 @@ There may be some changes on what I'll be following from the tutorial, this is p
 Also, I'll be skipping some of the tutorials, partly due to me knowing them already. Cheers to you all people!
 
 Enjoy your time looking around!
+
+[img](https://i.pinimg.com/originals/85/9a/f7/859af748d1eed0d67d5801a6df188a89.jpg)
