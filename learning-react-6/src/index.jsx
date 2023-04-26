@@ -71,14 +71,7 @@ class App extends React.Component {
       validate: this.validate,
     }
 
-    let status;
-
-    if (this.state.loggedIn) {
-      status = <Header data={data} />
-    }
-    else {
-      status = <LogIn validate={data.validate}/>
-    }
+    const status = this.state.loggedIn ? <Header data={data} /> : <LogIn validate={data.validate}/>;
 
     return (
       <div className='app'>
