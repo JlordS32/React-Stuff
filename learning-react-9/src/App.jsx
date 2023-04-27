@@ -145,7 +145,6 @@ class App extends Component {
       */
     console.log(data)
   }
-
   render() {
     // accessing the state value by destrutcturing the state
     // the noValidate attribute on the form is to stop the HTML5 built-in validation
