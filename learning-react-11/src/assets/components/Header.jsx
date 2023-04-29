@@ -6,7 +6,7 @@ class Header extends Component {
         return(
             <header className={headerStyles.header}>
                 <div className='header-wrapper'>
-                    <h1>Europe Counties</h1>
+                    <h1>{this.props.title}</h1>
                     <h2>Find all info you need before visiting Europe</h2>
                 </div>
             </header>

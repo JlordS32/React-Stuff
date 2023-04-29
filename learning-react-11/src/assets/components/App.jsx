@@ -1,74 +1,29 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import axios from 'axios';
-import '../styles/styles.scss';
+import MainPage from './MainPage';
+import CountryPage from './CountryPage';
 
 class App extends Component{
     state = {
-        data: []
+        showCountryComponent: false,
     }
 
-    componentDidMount() {
-        const API_URL = 'https://restcountries.com/v3.1/region/europe';
-
-        axios
-            .get(API_URL)
-            .then((response) => {
-                this.setState({
-                    data: response.data,
-                })
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
-
-    renderCountries = () => {
-        const data = this.state.data;
-
-        const countries = Object.entries(data).map(([key, value]) => ({
-            name: value.name.common,
-            flags: value.flags,
-            population: value.population,
-            languages:  value.languages,
-            key: key,
-        }));
-
-        return countries.map((country) => {
-
-            const languageEntries = Object.entries(country.languages).map(([key, value]) => {
-                return value;
-            })
-            
-            const formattedLanguage = languageEntries
-                .map((name) => name)
-                .join(', ');
-
-            return (
-                <div key={country.key} className='country-wrapper'>
-                    <div className='box'>
-                        {' '}
-                        <img src={country.flags.png} alt={country.flags.alt}/>
-                    </div>
-                    <div className='box'>
-                        <h1>{country.name}</h1>
-                        <p>
-                            Language: {formattedLanguage}
-                        </p>
-                        <p>Population: {country.population.toLocaleString()} </p>
-                    </div>
-                </div>
-            )
-        });
+    handleSwitchPage = () => {
+        this.setState({
+            showCountryComponent: true,
+        })
     }
 
     render() {
+        const data = {
+            title: 'Europe Countries',
+        }
+        const showCountry = this.state.showCountryComponent ? 
+        ( <CountryPage onButtonClick={this.handleSwitchPage}/> ) : (
+            <MainPage onButtonClick={this.handleSwitchPage} title={data.title}/> );
+
         return (
             <div className='app'>
-                <Header />
-                <div className='container'>
-                    {this.renderCountries()}
-                </div>
+                {showCountry};
             </div>
         )
     }

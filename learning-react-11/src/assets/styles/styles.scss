@@ -26,7 +26,9 @@ body {
 }
 
 .country-wrapper {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Add this line to center elements horizontally */
     max-width: 350px;
     width: 100%;
     max-height: 500px;
@@ -35,6 +37,30 @@ body {
     margin: 10px 20px;
     padding: 20px 40px;
     border-radius: 10px;
+    transition: 500ms;
+}
+
+.country-wrapper:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.country-wrapper:active {
+    background-color: white;
+    border: 1px black solid;
+    max-width: 300px;
+}
+
+.country-wrapper:nth-child(0):active {
+    outline: black 1px solid;
+}
+  
+.country-wrapper img {
+    width: auto;
+    height: 120px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    margin-bottom: 15px; /* Add this line to add some space below the image */
 }
 
 @media screen and (max-width: 375px) {
@@ -42,13 +68,6 @@ body {
         height: 80px;
     }
 
-}
-
-.country-wrapper img {
-    width: auto;
-    height: 120px;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
 }
 
 .country-wrapper .box {
