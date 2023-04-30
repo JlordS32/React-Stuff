@@ -1,6 +1,7 @@
 import React from 'react';
 import challenges from './challenges';
 import { NavLink } from "react-router-dom";
+import { Welcome } from './Welcome';
 
 const Challenge = ({
     challenges: {
@@ -24,7 +25,7 @@ const Challenge = ({
         <p>{description}</p>
     </div>
 );
-export const Challenges = () => {
+export const Challenges = (props) => {
     /*
     const location = useLocation();
     const path = location.pathname + '/*';
@@ -36,8 +37,9 @@ export const Challenges = () => {
 
     return (
         <>
-            <h1>Challenges</h1>
-            <h1>Choose any of the challenges</h1>
+            <Welcome isLoggedIn={true} handleLogout={props.logout}/>
+            <h2>Challenges</h2>
+            <p>Choose any of the challenges</p>
             <ul>
                 {challenge && challenge.length > 0 ? challenge.map(({ name, slug }) => (
                     <li key={slug}>

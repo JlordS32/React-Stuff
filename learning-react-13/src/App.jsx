@@ -4,6 +4,7 @@ import {
     Route,
     Routes,
     useLocation,
+    Navigate,
     useNavigate,
 } from "react-router-dom";
 import { NavBar } from './NavBar';
@@ -11,78 +12,64 @@ import { Home } from './Home';
 import { About } from './About';
 import { Contact } from './Contact';
 import { Challenges } from './Challenges.1';
-import { User, Welcome } from './User';
+import { Welcome } from './Welcome';
 
-const NotFound = (props) => <h1>The page your looking for is not found!</h1>
-
-const Routing = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/challenges/*" element={<Challenges />} />
-            <Route
-              path='/user/:username'
-              element={(props) => {
-                return (
-                    <User
-                        {...props}
-                        isLoggedIn={this.state.isLoggedIn}
-                        handleLogin={this.handleLogin}
-                    />
-                )
-              }}
-            />
-            <Route 
-                path='/login'
-                element={(props) => {
-                    return (
-                        <Welcome 
-                            {...props}
-                            isLoggedIn={this.state.isLoggedIn}
-                            handleLogin={this.handleLogin}
-                        />
-                    )
-                }}
-            />
-            <Route
-                path='/challenges'
-                element={(props) => {
-                    return this.state.isLoggedIn ? (
-                        <>
-                            <Challenges {...props} />
-                        </>
-                        ) : (
-                        <>
-                            {useNavigate('/user/asabeneh')}
-                        </>
-                    )
-                }}
-            />
-            <Route path="*" element={<NotFound />} />     
-        </Routes>
-    );
-}
+const NotFound = () => <h1>The page you're looking for is not found!</h1>
 
 class App extends Component {
     state = {
         isLoggedIn: false,
-        firstName: 'Jaylou',
+        username: 'Jaylou',
     }
 
     handleLogin = () => {
         this.setState({
-            isLoggedIn: true,
+            isLoggedIn: true
         })
     }
+
+    handleLogout = () => {
+        this.setState({
+            isLoggedIn: false
+        })
+        console.log(this.state.isLoggedIn)
+    }
+
     render() {
         return (
             <BrowserRouter>
                 <div className='app-container'>
                     <NavBar />
-
-                    <Routing />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route
+                            path='/challenges/*'
+                            element={
+                                this.state.isLoggedIn ? (
+                                    <Challenges logout={this.handleLogout}/>
+                                ) : (
+                                    <Navigate to='/login' replace />
+                                )
+                            }
+                        /> 
+                        <Route 
+                            path='/login'
+                            element={
+                                this.state.isLoggedIn ? (
+                                    <Navigate to='/challenges' replace />
+                                ) : (
+                                    <Welcome 
+                                    isLoggedIn={this.state.isLoggedIn}
+                                    handleLogin={this.handleLogin}
+                                    handleLogout={this.handleLogout}
+                                />
+                                )
+                            }
+                        />
+                        <Route path="*" element={<NotFound />} />     
+                    </Routes>
                 </div>
             </BrowserRouter>
         )
