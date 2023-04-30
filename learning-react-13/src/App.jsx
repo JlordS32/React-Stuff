@@ -1,137 +1,88 @@
 import React, { Component } from 'react';
-import challenges from './challenges';
 import {
     BrowserRouter,
     Route,
     Routes,
-    NavLink,
     useLocation,
+    useNavigate,
 } from "react-router-dom";
-
-
-const Home = (props) => {
-    return (
-        <h1>Welcome Home! UwU</h1>
-    )
-};
-
-const About = () => <h1>About Us</h1>;
-const Contact = () => {
-    return (
-        <h1>Contact Us</h1>
-    )
-};
-
-const Challenge = ({
-    challenges: {
-      name,
-      description,
-      status,
-      days,
-      level,
-      slug,
-      url,
-      duration,
-      author: { firstName, lastName },
-    },
-  }) => (
-    <div>
-      <h1>{name}</h1>
-      <p>{level}</p>
-      <p>
-        Author: {firstName} {lastName}
-      </p>
-      {duration && (
-        <>
-          {' '}
-          <small>{duration}</small> <br />
-        </>
-      )}
-      <small>Number of days: {days}</small>
-  
-      <p>{description}</p>
-    </div>
-)
-
-const Challenges = (props) => {
-    const path = props.location.pathname + '/*';
-    const slug = path.split('/').slice(path.split('/').length -1)[0];
-    const challenge = challenges.filter(
-        (challenge) => challenge.slug === slug
-    );
-
-    return (
-        <>
-            <h1>Challenges</h1>
-            <ul>
-                {challenge.map(({name, slug}) => (
-                    <li>
-                        <NavLink to={`/challenges/${slug}`}>{name}</NavLink>
-                    </li>
-                ))}
-            </ul>
-            <Routes>
-                <Route
-                    path={'/challenges'}
-                    element={() => <h1>Choose any of the challenges</h1>}
-                />
-                <Route 
-                    path={path}
-                    element={(props) => <Challenge challenge={challenge}/>}
-                />
-            </Routes>
-        </>
-    )
-};
+import { NavBar } from './NavBar';
+import { Home } from './Home';
+import { About } from './About';
+import { Contact } from './Contact';
+import { Challenges } from './Challenges.1';
+import { User, Welcome } from './User';
 
 const NotFound = (props) => <h1>The page your looking for is not found!</h1>
 
-const NavBar = () => (
-    <ul>
-        <li>
-            <NavLink to='/'>Home</NavLink>
-        </li>
-        <li>
-            <NavLink to='/about'>About</NavLink>
-        </li>
-        <li>
-            <NavLink to='/contact'>Contact</NavLink>
-        </li>
-        <li>
-            <NavLink to='/challenges'>Challenges</NavLink>
-        </li>
-    </ul>
-)
+const Routing = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/challenges/*" element={<Challenges />} />
+            <Route
+              path='/user/:username'
+              element={(props) => {
+                return (
+                    <User
+                        {...props}
+                        isLoggedIn={this.state.isLoggedIn}
+                        handleLogin={this.handleLogin}
+                    />
+                )
+              }}
+            />
+            <Route 
+                path='/login'
+                element={(props) => {
+                    return (
+                        <Welcome 
+                            {...props}
+                            isLoggedIn={this.state.isLoggedIn}
+                            handleLogin={this.handleLogin}
+                        />
+                    )
+                }}
+            />
+            <Route
+                path='/challenges'
+                element={(props) => {
+                    return this.state.isLoggedIn ? (
+                        <>
+                            <Challenges {...props} />
+                        </>
+                        ) : (
+                        <>
+                            {useNavigate('/user/asabeneh')}
+                        </>
+                    )
+                }}
+            />
+            <Route path="*" element={<NotFound />} />     
+        </Routes>
+    );
+}
 
 class App extends Component {
+    state = {
+        isLoggedIn: false,
+        firstName: 'Jaylou',
+    }
+
+    handleLogin = () => {
+        this.setState({
+            isLoggedIn: true,
+        })
+    }
     render() {
         return (
             <BrowserRouter>
                 <div className='app-container'>
                     <NavBar />
 
-                    <Routes>
-                        <Route 
-                            path="/" 
-                            element={<Home />} 
-                        />
-                        <Route 
-                            path="/about" 
-                            element={<About />} 
-                        />
-                        <Route 
-                            path="/contact" 
-                            element={<Contact location={location} />}
-                        />
-                        <Route 
-                            path="/challenges/*" 
-                            element={<Challenges location={location}/>} 
-                        />
-                        <Route 
-                            path="*"
-                            element={<NotFound />}
-                        />     
-                    </Routes>
+                    <Routing />
                 </div>
             </BrowserRouter>
         )

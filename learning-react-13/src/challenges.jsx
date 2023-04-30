@@ -1,5 +1,3 @@
-import React from 'react';
-
 const challenges = [
     {
       name: '30 Days Of Python',
