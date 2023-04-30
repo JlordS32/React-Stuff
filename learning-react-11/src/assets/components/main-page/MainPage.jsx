@@ -6,7 +6,7 @@ import Countries from './Countries';
 class Main extends Component{
     render() {
         return (
-            <div className='app'>
+            <div className='main-page'>
                 <Header title={this.props.title}/>
                 <div className='container'>
                     <Countries onButtonClick={this.props.onCountrySelect}/>

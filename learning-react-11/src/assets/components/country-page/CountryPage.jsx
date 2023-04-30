@@ -17,19 +17,30 @@ class Country extends Component {
             languages,
             key,
             capital,
-            postalCode,
             subRegion,
             coatOfArms,
             timezone,
         } = this.props.country;
 
-        console.log(flags);
+        const languageEntries = Object.entries(languages).map(([key, value]) => {
+            return value;
+        })
+        
+        const formattedLanguage = languageEntries
+            .map((name) => name)
+            .join(', ');
 
         return(
             
-            <div className='container'>
+            <div className='country-container' key={key}>
                 <h1>{name}</h1>
                 <img src={flags.png} />
+                <ul className='country-details'>
+                    <li>Population: {population}</li>
+                    <li>Capital: {capital}</li>
+                    <li>Language: {formattedLanguage}</li>
+                    <li>Timezone: {timezone}</li>
+                </ul>
                 <button onClick={this.handleClick}>Back</button>
             </div>
         )

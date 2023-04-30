@@ -36,11 +36,12 @@ class RenderCountries extends Component {
             languages:  value.languages,
             key: key,
             capital: value.capital,
-            postalCode: value.postalCode,
             subRegion: value.subRegion,
             coatOfArms : value.coatOfArms.png,
             timezone: value.timezones,
         }));
+
+        console.log(countries);
 
         return countries.map((country) => {
 
@@ -51,7 +52,7 @@ class RenderCountries extends Component {
             const formattedLanguage = languageEntries
                 .map((name) => name)
                 .join(', ');
-
+            
             return (
                 <div 
                     key={country.key} className='country-wrapper'
