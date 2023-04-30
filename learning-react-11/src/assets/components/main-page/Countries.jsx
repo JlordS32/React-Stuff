@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import getCountry from '../backend/getCountry.jsx';
-import Country from './CountryPage.jsx';
+import getCountry from '../../backend/getCountry.jsx';
 
 class RenderCountries extends Component {
     constructor(props) {
@@ -23,8 +22,8 @@ class RenderCountries extends Component {
           });
     }
 
-    handleClick = () => {
-        this.props.onButtonClick();
+    handleClick = (country) => {
+        this.props.onButtonClick(country);
     }
 
     render() {
@@ -36,6 +35,11 @@ class RenderCountries extends Component {
             population: value.population,
             languages:  value.languages,
             key: key,
+            capital: value.capital,
+            postalCode: value.postalCode,
+            subRegion: value.subRegion,
+            coatOfArms : value.coatOfArms.png,
+            timezone: value.timezones,
         }));
 
         return countries.map((country) => {
@@ -51,7 +55,7 @@ class RenderCountries extends Component {
             return (
                 <div 
                     key={country.key} className='country-wrapper'
-                    onClick={this.handleClick}>
+                    onClick={() => this.handleClick(country)}>
                     <div className='box'>
                         {' '}
                         <img src={country.flags.png} alt={country.flags.alt}/>

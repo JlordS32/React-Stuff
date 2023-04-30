@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import '../styles/styles.scss';
+import '../../styles/styles.scss';
 import Countries from './Countries';
 
 class Main extends Component{
@@ -9,7 +9,7 @@ class Main extends Component{
             <div className='app'>
                 <Header title={this.props.title}/>
                 <div className='container'>
-                    <Countries onButtonClick={this.props.onButtonClick}/>
+                    <Countries onButtonClick={this.props.onCountrySelect}/>
                 </div>
             </div>
         )

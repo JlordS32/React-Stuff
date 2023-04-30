@@ -1,32 +1,46 @@
 import React, { Component } from 'react';
-import MainPage from './MainPage';
-import CountryPage from './CountryPage';
+import MainPage from './main-page/MainPage';
+import CountryPage from './country-page/CountryPage';
 
-class App extends Component{
-    state = {
-        showCountryComponent: false,
-    }
+class App extends Component {
+  state = {
+    selectedCountry: null,
+  };
 
-    handleSwitchPage = () => {
-        this.setState({
-            showCountryComponent: true,
-        })
-    }
+  handleCountrySelection = (country) => {
+    this.setState({
+      selectedCountry: country,
+    });
+  };
 
-    render() {
-        const data = {
-            title: 'Europe Countries',
-        }
-        const showCountry = this.state.showCountryComponent ? 
-        ( <CountryPage onButtonClick={this.handleSwitchPage}/> ) : (
-            <MainPage onButtonClick={this.handleSwitchPage} title={data.title}/> );
+  handleCountryDeselection = () => {
+    this.setState({
+      selectedCountry: null,
+    });
+  };
 
-        return (
-            <div className='app'>
-                {showCountry};
-            </div>
-        )
-    }
+  render() {
+    const selectedCountry = this.state.selectedCountry;
+    const data = {
+      title: 'Europe Countries',
+    };
+
+    return (
+      <div className="app">
+        {selectedCountry ? (
+          <CountryPage
+            country={selectedCountry}
+            onDeselect={this.handleCountryDeselection}
+          />
+        ) : (
+          <MainPage
+            onCountrySelect={this.handleCountrySelection}
+            title={data.title}
+          />
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;
