@@ -8,32 +8,36 @@ class App extends Component {
     }
 
     componentDidMount() {
-        axios
-            .get('https://restcountries.com/v3.1/region/asia')
-            .then((response) => {
-                console.log(response.data);
-                this.setState({
-                    data: response.data
-                })
+        this.fetchCountryData();
+    }
+
+    fetchCountryData = async () => {
+        const url = 'https://restcountries.com/v3.1/region/asia';
+        try {
+            const response = axios.get(url);
+            const data = (await response).data;
+            this.setState({
+                data: data
             })
-            .catch((error) => {
-                console.log(error);
-            })
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     render() {
-        <div className='app'>
-            <h1>React Component Life Cycle</h1>
-            <h1>Calling API</h1>
+        const { data } = this.state;
+        return (
+            <div className='app'>
+            <h1>Asian</h1>
+            <h1>Countries</h1>
             <div>
-                <p>There are {this.state.data.length} countries in the api</p>
+                <p>There are currently {this.state.data.length} in asia</p>
                 <div className='countries-wrapper'>
-                    {this.state.data.map((country) => (
-                    <Country country={country} />
-                    ))}
+                    <Country data={data}/>
                 </div>
             </div>
-        </div>
+            </div>
+        )
     }
 }
 

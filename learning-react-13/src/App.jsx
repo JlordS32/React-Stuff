@@ -3,9 +3,8 @@ import {
     BrowserRouter,
     Route,
     Routes,
-    useLocation,
     Navigate,
-    useNavigate,
+    unstable_useBlocker as useBlocker,
 } from "react-router-dom";
 import { NavBar } from './NavBar';
 import { Home } from './Home';
@@ -20,7 +19,27 @@ class App extends Component {
     state = {
         isLoggedIn: false,
         username: 'Jaylou',
+        isBlocking: false,
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.isBlocking !== prevState.isBlocking) {
+          window.onbeforeunload = this.state.isBlocking ? () => true : undefined;
+        }
+    }
+
+    handleBlockNavigation = (nextLocation) => {
+        if (this.state.isBlocking) {
+          return window.confirm('Are you sure you want to leave this page?');
+        }
+    
+        return true;
+    };
+
+    handleInputChange = (event) => {
+        this.setState({ isBlocking: event.target.value.length > 0 });
+    };
+    
 
     handleLogin = () => {
         this.setState({
@@ -39,7 +58,14 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className='app-container'>
+
+                    
                     <NavBar />
+
+                    <p>Blocking? {this.state.isBlocking ? 'Yes, click a link or the back button.' : 'Nope.'}</p>
+
+                    <input type="text" onChange={this.handleInputChange} value={this.state.isBlocking ? 'Yes' : ''} />
+
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
