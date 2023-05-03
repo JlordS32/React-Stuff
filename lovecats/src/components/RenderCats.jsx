@@ -17,8 +17,9 @@ class Cats extends Component {
         const { data } = this.state;
         return data.map((cat) => {
             return (
-                <ul>
+                <ul key={cat.id}>
                     <li>{cat.name}</li>
+                    <img src={cat.vcahospitals_url} />
                 </ul>
             )
         })

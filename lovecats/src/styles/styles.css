@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bruno+Ace+SC&family=Lato:ital,wght@1,100&family=Montserrat&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap');
+
+
+:root {
+    --AmaticSC : 'Amatic SC', cursive;
+    --BrunoAce : 'Bruno Ace SC', cursive;
+    --Lato : 'Lato', sans-serif;
+    --Montserrate : 'Montserrat', sans-serif;
+    --OpenSans : 'Open Sans', sans-serif;
+    --Roboto : 'Roboto', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--Lato);
+}
