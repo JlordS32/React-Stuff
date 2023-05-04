@@ -1,6 +1,8 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-const API_KEY = import.meta.env.VITE_APP_API_KEY;
+dotenv.config();
+const API_KEY = process.env.API_KEY;
 
 export const fetchCats = async () => {
     try {
@@ -25,7 +27,7 @@ export const fetchCatImage = async (breedId) => {
             }
         });
         const data = (await response).data;
-        return data[0].url;
+        return data;
     } catch (err) {
         console.log(err);
     }
@@ -35,8 +37,8 @@ export const getCatImg = (id) => {
     return new Promise((resolve, reject) => {
         fetchCatImage(id)
             .then((url) => {
-                if(url  === '') {
-                    reject(new Error('Empty URL received'));
+                if(url.length  === 0) {
+                    reject(new Error('Empty array received'));
                 }
                 resolve(url);
             })
@@ -45,3 +47,7 @@ export const getCatImg = (id) => {
             });
     });
 };
+
+getCatImg('abys').then((response) => {
+    console.log(response);
+});

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchCats } from '../backend/getCats.jsx';
+import { fetchCats, getCatImg } from '../backend/getCats.jsx';
 
 class Cats extends Component {
     state = {
@@ -7,20 +7,28 @@ class Cats extends Component {
     }
 
     componentDidMount() {
-        fetchCats().then((response) => {
+        fetchCats().then((res) => {
             this.setState({
-                data: response,
+                data: res,
             })
         })
     }
+    
     render() {
         const { data } = this.state;
+        
+
         return data.map((cat) => {
-            return (
-                <ul key={cat.id}>
-                    <li>{cat.name}</li>
-                    <img src={cat.vcahospitals_url} />
-                </ul>
+            getCatImg(cat.id).then((response) => {
+                return response;
+            });
+            console.log(getCatImg(cat.id).then((response) => {
+                return response;
+            }))
+            return(
+                <div key={cat.id}>
+                    <h1>{cat.name}</h1>
+                </div>
             )
         })
     }
