@@ -19,29 +19,24 @@ export const fetchCats = async () => {
 
 export const fetchCatImage = async (breedId) => {
     try {
-        const response = axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=${API_KEY}`,{
+        const response = axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&size=small&mime_types=jpg`,{
             headers: {
                 'x-api-key': API_KEY
             }
         });
         const data = (await response).data;
-        return data[0].url;
+        return data[0];
     } catch (err) {
         console.log(err);
     }
 };
 
-export const getCatImg = (id) => {
-    return new Promise((resolve, reject) => {
-        fetchCatImage(id)
-            .then((url) => {
-                if(url  === '') {
-                    reject(new Error('Empty URL received'));
-                }
-                resolve(url);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-    });
+export const getCatImg = async () => {
+    const cats = await fetchCats();
+    const imagePromises = cats.map(cat => fetchCatImage(cat.id));
+    const images = await Promise.all(imagePromises);
+    return images;
 };
+
+
+

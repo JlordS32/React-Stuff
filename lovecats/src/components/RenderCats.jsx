@@ -1,36 +1,46 @@
 import React, { Component } from 'react';
-import { fetchCats, getCatImg } from '../backend/getCats.jsx';
+import { fetchCats, fetchCatImage } from '../backend/getCats.jsx';
 
 class Cats extends Component {
     state = {
         data: [],
+        img: [],
     }
 
     componentDidMount() {
-        fetchCats().then((res) => {
+        fetchCats().then(async (res) => {
+            const imagePromises = res.map((cat) => {
+                return fetchCatImage(cat.id).then((img) => {
+                    return img;
+                });
+            });
+    
+            const arr = await Promise.all(imagePromises);
+            console.log(arr);
+
+            const test = [...res];
+
+            console.log(test);
+
             this.setState({
                 data: res,
-            })
-        })
-    }
-    
-    render() {
-        const { data } = this.state;
-        
-
-        return data.map((cat) => {
-            getCatImg(cat.id).then((response) => {
-                return response;
             });
-            console.log(getCatImg(cat.id).then((response) => {
-                return response;
-            }))
-            return(
-                <div key={cat.id}>
-                    <h1>{cat.name}</h1>
-                </div>
-            )
-        })
+        });
+    }
+
+    render() {
+        const { data, img } = this.state;
+
+
+        return (
+            <div>
+                {/* {data.map((cat) => {
+                    if (cat) {
+                        <img src={imgUrls[cat.reference_image_id]} />
+                    }
+                })} */}
+            </div>
+        );
     }
 }
 

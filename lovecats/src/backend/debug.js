@@ -19,7 +19,7 @@ export const fetchCats = async () => {
     }
 };
 
-export const fetchCatImage = async (breedId) => {
+const fetchCatImage = async (breedId = 'none') => {
     try {
         const response = axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=${API_KEY}`,{
             headers: {
@@ -27,27 +27,20 @@ export const fetchCatImage = async (breedId) => {
             }
         });
         const data = (await response).data;
-        return data;
+        return data[0];
     } catch (err) {
         console.log(err);
     }
 };
 
-export const getCatImg = (id) => {
-    return new Promise((resolve, reject) => {
-        fetchCatImage(id)
-            .then((url) => {
-                if(url.length  === 0) {
-                    reject(new Error('Empty array received'));
-                }
-                resolve(url);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-    });
+export const getCatImg = async () => {
+    const cats = await fetchCats();
+    const imagePromises = cats.map(cat => fetchCatImage(cat.id));
+    const images = await Promise.all(imagePromises);
+    return images;
 };
 
-getCatImg('abys').then((response) => {
-    console.log(response);
+getCatImg().then((res) => {
+    console.log(res);
 });
+
