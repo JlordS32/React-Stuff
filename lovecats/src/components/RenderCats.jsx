@@ -4,42 +4,47 @@ import { fetchCats, fetchCatImage } from '../backend/getCats.jsx';
 class Cats extends Component {
     state = {
         data: [],
-        img: [],
     }
 
     componentDidMount() {
         fetchCats().then(async (res) => {
             const imagePromises = res.map((cat) => {
                 return fetchCatImage(cat.id).then((img) => {
-                    return img;
+                    return {...cat, img};
                 });
             });
     
             const arr = await Promise.all(imagePromises);
-            console.log(arr);
 
-            const test = [...res];
-
-            console.log(test);
+            const filteredRes = arr.filter(cat => cat.img !== undefined);
 
             this.setState({
-                data: res,
+                data: filteredRes,
             });
         });
     }
 
     render() {
-        const { data, img } = this.state;
+        const { data } = this.state;
 
 
         return (
-            <div>
-                {/* {data.map((cat) => {
+            <>
+                {data.map((cat) => {
                     if (cat) {
-                        <img src={imgUrls[cat.reference_image_id]} />
+                        return (
+                            <div key={cat.id}>
+                                <h1>{cat.name}</h1>
+                                <p style={{fontWeight: '500'}}>{cat.description}</p>
+                                <img src={cat.img.url} style={{
+                                    width: '450px', 
+                                    height: 'auto',
+                                }}/>
+                            </div>
+                        )
                     }
-                })} */}
-            </div>
+                })}
+            </>
         );
     }
 }

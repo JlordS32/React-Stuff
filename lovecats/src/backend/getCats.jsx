@@ -31,12 +31,5 @@ export const fetchCatImage = async (breedId) => {
     }
 };
 
-export const getCatImg = async () => {
-    const cats = await fetchCats();
-    const imagePromises = cats.map(cat => fetchCatImage(cat.id));
-    const images = await Promise.all(imagePromises);
-    return images;
-};
-
 
 
