@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+<body>
+    <div class="container">
+        <div class="swiper">
+            <swiper-container slides-per-view="1" speed="700" scrollbar="true">
+                <swiper-slide>
+                    <img src="images/aston-martin.jpg" alt="img" loading="lazy">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="images/audi-rs-e-tron-gt.jpg" alt="img">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="images/maserati-mc20.jpg" alt="img" loading="lazy">
+                </swiper-slide>
+            </swiper-container>
+            <div class="sliderBtn">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <script src="script.js">
+        </script>
+    </div>
+</body>
+</html>
