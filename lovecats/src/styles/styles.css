@@ -21,6 +21,11 @@
     --secondary-color: #C8AD7F ;
 }
 
+*::selection {
+    color: var(--primary-color-1);
+    background-color: var(--font-color-2);
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -42,18 +47,29 @@ a {
     min-height: 100vh;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 400px) {
     .header-container {
-        font-size: calc(30px - 30%);
+      font-size: calc(30px - 30%);
     }
-
-    .header-container img{
-        max-width: 80px;
-        width: 70%;
-        height: 70%;
-        margin-right: 1em;
+  
+    .header-container > img {
+      max-width: 80px !important;
+      width: 70%;
+      height: 70%;
+      margin-right: 1em;
+    }
+  
+    .nav-container > ul > li {
+      margin: 0.1em 0;
     }
 }
+
+@media screen and (max-width: 380px) {
+    .nav-container > ul {
+        flex-direction: column !important;
+    }
+}
+  
 
 header {
     width: auto;
@@ -91,11 +107,16 @@ header {
 footer {
     width: 100%;
     margin-top: auto;
+    background-color: var(--accent-color-2);
+    color: var(--primary-color);
 }
 
 main {
     width: 100%;
     flex: 1;
+    background-color: var(--accent-color);
+    color: var(--primary-color-1);
+    font-family: var(--Montserrate);
 }
 
 .nav-container {
@@ -107,32 +128,30 @@ main {
 .nav-container ul{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-container ul li {
-    margin-inline-end: 70px;
+    margin-inline-end: 1.5em;
     list-style-type: none;
     font-size: 30px;
 }
 
-.nav-container ul li a {
+.nav-container ul li {
     font-weight: 700;
     text-transform: lowercase;
     transition: 300ms;
 }
 
-.nav-container ul li a:hover {
+.nav-container ul li:hover {
     color: black;
-    font-size: 35px;
+    transform: translateY(-5px);
 }
 
 
-.nav-container ul li a:active {
+.nav-container ul li:active {
     color: var(--primary-color-1);
-    font-size: 30px;
-}
-
-.nav-container ul li a::selection {
-    color: var(--primary-color-1);
-    background-color: var(--font-color-2);
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import cat from '../assets/cat.png'
+import cat from '../assets/cat.png';
 
 const Header = () => {
     return (

@@ -1,0 +1,65 @@
+.hero-container {
+    max-width: 100vw;
+    width: 100%;
+    background-color: #f8f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-2);
+    padding: 100px 50px;
+    box-sizing: border-box;
+    border-bottom: var(--accent-color-2) solid 10px;
+}
+
+@media screen and (max-width: 1100px) {
+    .hero-details {
+        flex-direction: column;
+    }
+}
+
+.hero-details {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-icons > img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-icons {
+    margin-right: 50px;
+}
+
+.hero-call-to-action h1 {
+    margin-bottom: 1.5em;
+}
+
+.hero-call-to-action p {
+    font-weight: 500;
+}
+
+.hero-call-to-action button {
+    background-color: #ffd939;
+    color: var(--font-color-2);
+    border: 2px solid var(--font-color-1);
+    width: 8em;
+    height: 3em;
+    font-size: 15px;
+    border-radius: 50px;
+    border: 0;
+    margin-top: 2em;
+    font-weight: 600;
+    transition: 200ms;
+}
+
+.hero-call-to-action button:hover {
+    opacity: 70%;
+    color: var(--primary-color);
+}
+
+.hero-call-to-action button:active {
+    transform: scale(1.2);
+}
