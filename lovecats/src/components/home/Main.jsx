@@ -18,7 +18,7 @@ const Main = () => {
                     </div>
                 </div>
                 <div className='contents'>
-                    Ipsum dolor, sit amet consectetur adipisicing elit. Quia corporis eaque, similique accusantium est voluptatibus nam reiciendis magnam, optio nesciunt quaerat iusto!
+                    "Ipsum dolor, sit amet consectetur adipisicing elit. Quia corporis eaque, similique accusantium est voluptatibus nam reiciendis magnam, optio nesciunt quaerat iusto!"
                 </div>
             </div>
         </main>

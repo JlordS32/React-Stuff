@@ -18,7 +18,8 @@
     --accent-color: #8C746A;
     --accent-color-1: #8a736abd;
     --accent-color-2: #51433d;
-    --secondary-color: #C8AD7F ;
+    --accent-color-3: #ffd939;
+    --secondary-color: #C8AD7F;
 }
 
 *::selection {
@@ -88,6 +89,7 @@ header {
     font-size: 30px;
     padding: 0em 2em 0em 2em;
     box-sizing: border-box;
+    border-bottom: 1px solid var(--font-color);
 }
 
 .header-container {

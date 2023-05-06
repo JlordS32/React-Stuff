@@ -8,10 +8,12 @@ class Cats extends Component {
         return (
             <div className='getcats-container'>
                 <div className='getcats-content'>
-                    <h1>Select your cat</h1>
-                    <ul className='catlist-container'>
+                    <div>
+                        <h1>Select your cat!</h1>
+                    </div>
+                    <div className='catlist-container'>
                         <CatList />
-                    </ul>
+                    </div>
                 </div>
             </div>
         )

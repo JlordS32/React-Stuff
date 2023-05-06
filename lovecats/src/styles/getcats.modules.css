@@ -2,21 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 50px;
 }
 
-.getcats-content {
-    outline: 1px solid red;
+.getcats-content { 
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
 .getcats-content h1 {
-    margin: 1em;
+    margin: 1em 0 2em 0;
     font-family: var(--AmaticSC);
     text-transform: lowercase;
     font-size: 50px;
+    text-align: center;
 }
 
 .catlist-container {
@@ -24,17 +23,64 @@
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     grid-auto-flow: row;
-    list-style-type: none;
     text-align: center;
+    font-family: var(--Roboto);
+    gap: 40px;
 }
 
-.grid-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    outline: cadetblue 1px solid;
+.catlist-items {
+    padding: 20px 30px;
+    color: var(--font-color-2);
+    background-color: var(--accent-color-3);
+    font-weight: 600;
+    border-radius: 20px;
+    border: 0;
+    transition: background-color 300ms ease-in-out,
+                transform 100ms ease-in;
+    overflow: hidden;
 }
-.catlist-container li {
-    box-sizing: border-box;
-    padding: 20px;
+
+.catlist-items::before {
+    content: '';
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+    border-radius: 100%;
+    background-color: var(--accent-color-3);
+    display: inline-block;
+    transition: transform 700ms ease-out;
+}
+
+
+.catlist-items:active::before,
+.catlist-items:focus::before {
+    transform: scale(500);
+}
+
+.catlist-items:focus {
+    outline: 2px solid var(--font-color-2);
+}
+
+.catlist-items:hover {
+    background-color: var(--primary-color-1);
+    color: var(--font-color-2);
+    outline: var(--accent-color-3) 3px solid;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+@media screen and (max-width: 1080px) {
+    .catlist-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 830px) {
+    .catlist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 580px) {
+    .catlist-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

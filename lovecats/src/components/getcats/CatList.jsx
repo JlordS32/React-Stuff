@@ -19,10 +19,12 @@ class CatList extends Component {
 
         return data.map((cat) => {
             return (
-                <div className='grid-cell'>
-                    <li key={cat.id}>
-                        {cat.name}
-                    </li>
+                <div 
+                    key={cat.id} 
+                    className='catlist-items'
+                    tabindex="0"   
+                >
+                    {cat.name} 
                 </div>
             )
         })

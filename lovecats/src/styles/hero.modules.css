@@ -35,6 +35,9 @@
 
 .hero-call-to-action h1 {
     margin-bottom: 1.5em;
+    color: #ffcf10;
+    font-weight: 700;
+    font-size: 40px;
 }
 
 .hero-call-to-action p {
@@ -42,7 +45,7 @@
 }
 
 .hero-call-to-action button {
-    background-color: #ffd939;
+    background-color: #ffd426;
     color: var(--font-color-2);
     border: 2px solid var(--font-color-1);
     width: 8em;
@@ -50,6 +53,7 @@
     font-size: 15px;
     border-radius: 50px;
     border: 0;
+    cursor: pointer;
     margin-top: 2em;
     font-weight: 600;
     transition: 200ms;
