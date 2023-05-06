@@ -1,6 +1,7 @@
 import React from "react";
-import '../styles/hero.modules.css';
-import catImg from '../assets/cat2.png'
+import '../../styles/hero.modules.css';
+import catImg from '../../assets/cat2.png';
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -14,7 +15,7 @@ const Hero = () => {
                     <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et dolor facilis unde quis voluptatibus dolore animi autem quibusdam sunt dolores placeat minus nihil corrupti ipsam veniam non tenetur, impedit architecto ullam necessitatibus voluptate natus! In consectetur deserunt obcaecati quae architecto ea eligendi distinctio quis sequi quia dolorum a, possimus error?
                     </p>
-                    <button>Try now!</button>
+                    <button><NavLink to='getcats'>Try now!</NavLink></button>
                 </div>
             </div>
         </div>

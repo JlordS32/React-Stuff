@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import Cats from './RenderCats.jsx';
-import Main from './Main.jsx';
+import Main from './home/Main.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
+import Cats from './getcats/RenderCats.jsx';
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+    Navigate
+} from 'react-router-dom';
 
 class App extends Component {
     state = {
@@ -11,11 +17,16 @@ class App extends Component {
 
     render() {
         return (
-            <div className='app'>
-                <Header />
-                <Main />
-                <Footer />
-            </div>
+            <BrowserRouter>
+                <div className='app'>
+                    <Header />
+                    <Routes>
+                        <Route path='/' element={<Main />} />
+                        <Route path='/getcats' element={<Cats />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </BrowserRouter>
         )
     }
 }

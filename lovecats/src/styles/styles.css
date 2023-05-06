@@ -72,7 +72,11 @@ a {
   
 
 header {
-    width: auto;
+    position: fixed; /* Added to make header stick to the top */
+    top: 0; /* Added to position header at the top */
+    left: 0; /* Added to position header on the left */
+    z-index: 1000; /* Added to ensure header stays above other elements */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,12 +111,14 @@ header {
 footer {
     width: 100%;
     margin-top: auto;
-    background-color: var(--accent-color-2);
+    background-color: var(--accent-color);
     color: var(--primary-color);
+    border-top: 1px solid var(--accent-color-2);
 }
 
 main {
     width: 100%;
+    margin-top: 15em;
     flex: 1;
     background-color: var(--accent-color);
     color: var(--primary-color-1);
@@ -153,5 +159,9 @@ main {
 
 
 .nav-container ul li:active {
-    color: var(--primary-color-1);
+    color: #F3F3F3;
+}
+
+.hide-header {
+    display: none;
 }

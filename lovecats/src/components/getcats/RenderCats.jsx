@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchCats, fetchCatImage } from '../backend/getCats.jsx';
+import { fetchCats, fetchCatImage } from '../../backend/getCats.jsx';
 
 class Cats extends Component {
     state = {

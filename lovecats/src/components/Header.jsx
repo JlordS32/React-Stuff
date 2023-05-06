@@ -1,5 +1,8 @@
 import React from 'react';
 import cat from '../assets/cat.png';
+import {
+    NavLink,
+} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -8,15 +11,25 @@ const Header = () => {
                 <img src={cat} />
                 <h1>Luv Cats</h1>
             </div>
-            <nav className='nav-container'>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Book</a></li>
-                    <li><a href="#">Get Cats</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </nav>
+                <nav className='nav-container'>
+                    <ul>
+                        <li>
+                            <NavLink to='/'>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/getcats'>Get Cats</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/getrandomcats'>Get Random Cats</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/about'>About</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/contact'>Contact</NavLink>
+                        </li>
+                    </ul>
+                </nav>
         </header>
     );
 };
