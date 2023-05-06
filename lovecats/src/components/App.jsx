@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Main from './home/Main.jsx';
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
-import Cats from './getcats/RenderCats.jsx';
+import Cats from './getcats/GetCats.jsx';
 import {
     BrowserRouter,
     Route,

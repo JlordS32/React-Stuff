@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchCats, fetchCatImage } from '../../backend/getCats.jsx';
 
-class Cats extends Component {
+class RenderCat extends Component {
     state = {
         data: [],
     }
@@ -27,7 +27,6 @@ class Cats extends Component {
     render() {
         const { data } = this.state;
 
-
         return (
             <>
                 {data.map((cat) => {
@@ -49,4 +48,4 @@ class Cats extends Component {
     }
 }
 
-export default Cats;
+export default RenderCat;

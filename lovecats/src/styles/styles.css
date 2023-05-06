@@ -26,6 +26,10 @@
     background-color: var(--font-color-2);
 }
 
+/* * {
+    outline: red 1px solid;
+} */
+
 body {
     padding: 0;
     margin: 0;
@@ -72,10 +76,6 @@ a {
   
 
 header {
-    position: fixed; /* Added to make header stick to the top */
-    top: 0; /* Added to position header at the top */
-    left: 0; /* Added to position header on the left */
-    z-index: 1000; /* Added to ensure header stays above other elements */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -87,6 +87,7 @@ header {
     text-align: center;
     font-size: 30px;
     padding: 0em 2em 0em 2em;
+    box-sizing: border-box;
 }
 
 .header-container {
@@ -118,7 +119,6 @@ footer {
 
 main {
     width: 100%;
-    margin-top: 15em;
     flex: 1;
     background-color: var(--accent-color);
     color: var(--primary-color-1);
