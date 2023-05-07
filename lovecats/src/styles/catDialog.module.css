@@ -1,0 +1,18 @@
+.cat-dialog-box {
+    box-sizing: border-box;
+}
+
+.cat-dialog-container {
+    background-color: red !important;
+    overflow: visible;
+    width: 500px;
+}
+
+.cat-dialog-container h2 {
+    color:aqua
+}
+
+.cat-dialog-container > img {
+    width: auto !important;
+    height: 300px;
+}
