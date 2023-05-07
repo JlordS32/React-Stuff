@@ -89,7 +89,6 @@ header {
     font-size: 30px;
     padding: 0em 2em 0em 2em;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--font-color);
     transition: top 1s ease, transform 1s ease;
 }
 
@@ -132,6 +131,13 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color: var(--accent-color);
+    font-family: var(--AmaticSC);
+    color: var(--primary-color-1);
+    border-bottom: 1px solid var(--accent-color-2);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .nav-container ul{
