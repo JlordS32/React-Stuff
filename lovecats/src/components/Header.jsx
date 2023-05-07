@@ -4,9 +4,9 @@ import {
     NavLink,
 } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     return (
-        <header>
+        <header style={props.style}>
             <div className='header-container'>
                 <img src={cat} />
                 <h1>Luv Cats</h1>

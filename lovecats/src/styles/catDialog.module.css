@@ -1,15 +1,13 @@
 .cat-dialog-paper {
-    max-width: 800px !important;
+    max-width: 650px !important;
     width: 100% !important;
-    width: 500px;
     max-height: 1000px !important;
-    height: 70% !important;
+    height: 80% !important;
     display: flex;
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    padding: 20px; 
-    outline: 1px solid blue;
+    padding: 40px 10px;
     box-sizing: border-box;
 }
 
@@ -20,38 +18,42 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 80%; 
+    width: 85%; 
     height: 100%; 
     background-color: var(--accent-color);
     box-sizing: border-box;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-radius: 10px;
 }
 
 .cat-dialog-container h2 {
     color: var(--primary-color);
     word-wrap: break-word;
+    font-family: var(--AmaticSC);
+    text-transform: lowercase;
+    font-size: 30px;
 }
 
 .cat-description {
-    outline: red 1px solid;;
     width: 80%;
+    background-color: var(--primary-color);
 }
 
 .cat-dialog-container > .content-wrapper > img {
     width: auto !important;
-    height: 300px;
+    height: 250px;
     max-width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .cat-stats {
-    outline: 1px red solid;
     width: 80%;
 }
 
 .cat-details {
-    outline: 1px red solid;
     width: 80%;
 }
 
@@ -63,4 +65,5 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 40px;
 }

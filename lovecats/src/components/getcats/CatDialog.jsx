@@ -52,7 +52,8 @@ class CatDialog extends Component {
                         <img src={imgUrl} alt={name} />
                         <h2>{name}</h2>
                         <div className={styles['cat-description']}>
-                            {description}
+                            <h3>Description</h3>
+                            <p>{description}</p>
                         </div>
                         <div className={styles['cat-details']}>
                             <div>Temperance: {temperament}</div>

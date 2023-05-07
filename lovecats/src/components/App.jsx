@@ -13,13 +13,30 @@ import {
 class App extends Component {
     state = {
         data: [],
+        style: {
+            position: 'sticky',
+            top: '0',
+            transform: '',
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                style: {
+                    position: 'sticky',
+                    top: '-300px',
+                    transform: 'translateY(0)',
+                }
+            })
+        }, 3000);
     }
 
     render() {
         return (
             <BrowserRouter>
                 <div className='app'>
-                    <Header />
+                    <Header style={this.state.style}/>
                     <Routes>
                         <Route path='/' element={<Main />} />
                         <Route path='/getcats' element={<Cats />} />

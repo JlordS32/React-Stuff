@@ -90,6 +90,7 @@ header {
     padding: 0em 2em 0em 2em;
     box-sizing: border-box;
     border-bottom: 1px solid var(--font-color);
+    transition: top 1s ease, transform 1s ease;
 }
 
 .header-container {
