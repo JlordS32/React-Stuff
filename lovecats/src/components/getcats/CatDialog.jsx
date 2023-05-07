@@ -46,6 +46,7 @@ class CatDialog extends Component {
             health_issues: healthIssues = 0,
             shedding_level: sheddingLevel = 0,
         } = selectedCat || {};
+        
 
         const stats = {
             affection_level: { value: affectionLevel, str: `Affection Level: ${affectionLevel}` },
