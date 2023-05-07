@@ -87,9 +87,8 @@
     padding-top: 40px;
 }
 
-.cat-stats-container,
-.cat-stats-bar {
-    outline: 1px red solid;
+.cat-stats-container h3 {
+    margin-top: 1.5em;
 }
 
 .stats-wrapper {
@@ -100,7 +99,6 @@
 .stats {
     display: grid;
     grid-template-columns: 1.5fr 3fr 0.5fr;
-    outline: 1px red solid;
     margin: 10px 0;
     height: 40px;
     text-align: center;
