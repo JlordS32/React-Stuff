@@ -9,8 +9,6 @@ import CatDialog from './CatDialog';
 import { fetchCats, fetchCatImage } from '../../backend/getCats';
 const CatList = lazy(() => import('./CatList'));
 
-import RenderCat from './RenderCats';
-
 class Cats extends Component {
     state = {
         isDialogOpen: false,
@@ -24,7 +22,6 @@ class Cats extends Component {
             this.setState({
                 isDialogOpen: true,
                 selectedCat: cat,
-                url: cat.img.url,
             })
         }, 300); 
     }
@@ -55,6 +52,7 @@ class Cats extends Component {
 
     render() {
         const { data } = this.state;
+        console.log(data);
         return (
             <div className='getcats-container'>
                 <div className='getcats-content'>
@@ -66,12 +64,12 @@ class Cats extends Component {
                             {data.map((cat) => {
                                 return (
                                     <div key={cat.id}>
-                                        <CatList 
+                                        {<CatList 
                                             onClick={() => {
                                                 this.openDialog(cat)
                                             }}
                                             cat={cat}
-                                        />
+                                        />}
                                     </div>
                                 )
                             })}
@@ -82,7 +80,6 @@ class Cats extends Component {
                     open={this.state.isDialogOpen}
                     onClose={this.closeDialog}
                     selectedCat={this.state.selectedCat}
-                    selectedCatUrl={this.state.url}
                 />
             </div>
         )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 class CatList extends Component {
     render() {
@@ -9,7 +10,7 @@ class CatList extends Component {
                 tabIndex="0"
                 onClick={this.props.onClick}   
             >
-                {cat.name} 
+                {cat.name || <Skeleton />} 
             </div>
         )
     }

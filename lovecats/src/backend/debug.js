@@ -39,8 +39,3 @@ export const getCatImg = async () => {
     const images = await Promise.all(imagePromises);
     return images;
 };
-
-getCatImg().then((res) => {
-    console.log(res);
-});
-
