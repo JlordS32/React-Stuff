@@ -92,14 +92,17 @@ class CatDialog extends Component {
                                 <div className={styles['stats-wrapper']}>
                                     {Object.entries(stats).map(([key, stat]) => (
                                     <div key={key} className={styles['stats']}>
-                                        <div className='stats-name'>{stat.str.split(':')[0]}:</div>
+                                        <div className={styles['stats-name']}>{stat.str.split(':')[0]}</div>
                                         <div
                                         className={styles['cat-stats-bar']}
-                                        style={{
+                                        >
+                                            <div className={styles['progress-bar']}
+                                                style={{
                                             width: `${stat.value * 20}%`,
-                                        }}
-                                        ></div>
-                                        <div>5</div>
+                                            }}>
+                                            </div>
+                                        </div>
+                                        <div className={styles['max-bar']}>5</div>
                                     </div>
                                     ))}
                                 </div>
