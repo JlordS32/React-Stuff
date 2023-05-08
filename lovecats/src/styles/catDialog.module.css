@@ -23,7 +23,7 @@
     background-color: var(--accent-color);
     box-sizing: border-box;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-    border-radius: 30px;
+    border-radius: 15px;
     overflow: hidden;
 }
 
@@ -95,6 +95,7 @@
 .stats-wrapper {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .stats {
@@ -138,11 +139,11 @@
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #fce177;
+    background-color: #ffdc52;
     border-radius: 10px; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #ffd939;
+    background-color: #ffd429;
 }
