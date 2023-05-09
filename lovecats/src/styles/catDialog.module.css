@@ -125,6 +125,11 @@
 
 .stats-name {
     font-size: 13px;
+    font-weight: 700;
+}
+
+.max-bar {
+    font-weight: 700;
 }
 
 ::-webkit-scrollbar {
