@@ -1,39 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Country from './Country';
 
 const App = () => {
 
-    const [searchInput, setSearchInput] = useState('');
+   const [data, setData] = useState([]);
 
-    const data = [
-        { id: 1, name: 'John' },
-        { id: 2, name: 'Jane' },
-        { id: 3, name: 'Doe' },
-    ];
+   useEffect(() => {
+      const fetchData = async () => {
+         const url = 'https://restcountries.com/v3.1/all'
 
-    const handleChange = (e) => {
-        setSearchInput(e.target.value);
-    }
+         try {
+            const response = await axios.get(url);
+            setData(response.data);
+         } catch (e) {
+            console.error('Error fetching data:', e);
+         }
+      };
 
-    const filteredData = data.filter(item => item.name.toLowerCase().includes(searchInput.toLowerCase()));
+      fetchData();
+   }, []);
 
-    return (
-        <div className='app'>
-            <input 
-                input='text'
-                placeholder='Search...'
-                value={searchInput}
-                onChange={handleChange}
-            />
-
-            <div>
-                {filteredData.map(item => {
-                    return (
-                        <h1 key={item.id}>{item.name}</h1>
-                    )
-                })}
-            </div>
-        </div>
-    )
+   return (
+      <div className='app'>
+         <h1>Hello World</h1>
+         <Country data={data}/>
+      </div>
+   )
 }
 
 export default App;
