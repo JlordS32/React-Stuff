@@ -23,10 +23,45 @@ const Country = ({data}) => {
          />
          <div className='country-wrapper'>
             {filteredData.map((country) => {
+
+               const { currencies } = country;
+
+               const noCurrency = {
+                  name: 'None',
+                  symbol: '',
+               };
+
+               const displayCurrency = currencies
+                  ? Object.values(currencies)[0] || noCurrency
+                  : noCurrency;
+
                return (
                   <div key={country.name.common} className='country-box'>
-                     <img src={country.flags.png} alt={country.flags.alt}/>
-                     <h3>{country.name.common}</h3>
+                     <div className='country-img-container'>
+                        <img src={country.flags.png} alt={country.flags.alt}/>
+                        <h3>{country.name.common}</h3>
+                     </div>
+
+                     <div>
+                        <p>Currency: {displayCurrency.name}</p>
+                     </div>
+
+                     <div>
+                        <p>Symbol: {displayCurrency.symbol}</p>
+                     </div>
+
+                     <div>
+                        <p>Continents: {country.continents}</p>
+                     </div>
+
+                     <div>
+                        <p>Population: {country.population.toLocaleString()}</p>
+                     </div>
+
+                     <div>
+                        <p>Capital: {country.capital}</p>
+                     </div>
+                     
                   </div>
                )
             })}

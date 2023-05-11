@@ -3,6 +3,12 @@ body {
    padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
+
+:root {
+   --font: 'Wix Madefor Text', sans-serif;
+}
+
 .app {
    height: 100vh;
    display: flex;
@@ -12,10 +18,11 @@ body {
 .header-wrapper {
    outline: 1px red solid;
    text-align: center;
+   margin-bottom: 50px;
 }
 
 .header-wrapper h1 {
-   font-size: 35px;
+   font-size: 50px;
 }
 
 .countries-container {
@@ -23,18 +30,25 @@ body {
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   font-family: var(--font);
 }
 
 .country-wrapper {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    outline: 1px red solid;
+   gap: 30px;
 }
 
 .country-search-bar {
    outline: 1px red solid;
    height: 50px;
-   width: 240px;
+   max-width: 750px;
+   width: 80%;
+   border-radius: 10px;
+   text-indent: 1em;
+   font-size: 20px;
+   margin-bottom: 50px;
 }
 
 .country-box {
@@ -42,12 +56,52 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: center;
+   padding: 15px 30px;
+   border-radius: 10px;
+   line-height: 0;
+   max-width: 300px;
+   width: 100%;
+   box-sizing: border-box;
 }
 
 .country-box img {
    aspect-ratio: 16/9;
-   height: 170px;
+   height: 120px;
    width: auto;
-   outline: 1px blue solid;
+   border-radius: 10px;
+   outline: 1px green solid;
+}
+
+.country-img-container {
+   display: flex;
+   justify-content: center;
+   outline: 1px red solid;
+   flex-direction: column;
+   align-items: center;
+   height: 70%;
+}
+
+@media screen and (max-width: 1500px) {
+   .country-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+   }
+}
+@media screen and (max-width: 1100px) {
+   .country-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+@media screen and (max-width: 650px) {
+   .country-wrapper {
+      grid-template-columns: repeat(1, 1fr);
+   }
+
+   .header-wrapper h1 {
+      font-size: 40px;
+   }
+}
+@media screen and (max-width: 400px) {
+   .header-wrapper h1 {
+      font-size: 30px;
+   }
 }
