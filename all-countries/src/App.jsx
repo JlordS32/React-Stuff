@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Country from './Country';
+import Header from './Header';
 
 const App = () => {
 
@@ -23,7 +24,7 @@ const App = () => {
 
    return (
       <div className='app'>
-         <h1>Hello World</h1>
+         <Header />
          <Country data={data}/>
       </div>
    )

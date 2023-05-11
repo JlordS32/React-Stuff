@@ -1,0 +1,53 @@
+body {
+   margin: 0;
+   padding: 0;
+}
+
+.app {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.header-wrapper {
+   outline: 1px red solid;
+   text-align: center;
+}
+
+.header-wrapper h1 {
+   font-size: 35px;
+}
+
+.countries-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.country-wrapper {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   outline: 1px red solid;
+}
+
+.country-search-bar {
+   outline: 1px red solid;
+   height: 50px;
+   width: 240px;
+}
+
+.country-box {
+   outline: 1px red solid;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.country-box img {
+   aspect-ratio: 16/9;
+   height: 170px;
+   width: auto;
+   outline: 1px blue solid;
+}
