@@ -6,14 +6,26 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
 
 :root {
+   /* fonts */
    --font: 'Wix Madefor Text', sans-serif;
+
+   /* colours */
+   --accent-color-1: #A9FDC1;
+   --accent-color-2: #72AB82;
+   --white: #F5FCF7;
+   --black: #232423;
+   --lightgrey: #C3C9C5;
 }
+
+/* App containers */
 
 .app {
    height: 100vh;
    display: flex;
    flex-direction: column;
 }
+
+/* Header */
 
 .header-wrapper {
    outline: 1px red solid;
@@ -24,6 +36,8 @@ body {
 .header-wrapper h1 {
    font-size: 50px;
 }
+
+/* Countries */
 
 .countries-container {
    display: flex;
