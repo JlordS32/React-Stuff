@@ -1,7 +1,7 @@
 body {
    margin: 0;
    padding: 0;
-   background-color: var(--white)
+   background-color: var(--white);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
@@ -24,6 +24,7 @@ body {
    height: 100vh;
    display: flex;
    flex-direction: column;
+   box-sizing: border-box;
 }
 
 /* Header */
@@ -48,6 +49,7 @@ body {
    align-items: center;
    flex-direction: column;
    font-family: var(--font);
+   width: 100%;
 }
 
 .country-wrapper {
@@ -90,7 +92,7 @@ body {
 .country-box:hover {
    opacity: 70%;
    cursor: pointer;
-   transform: translateY(-10px);
+   transform: translateY(-10px) scale(1.05);
    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -131,5 +133,19 @@ body {
 @media screen and (max-width: 400px) {
    .header-wrapper h1 {
       font-size: 30px;
+   }
+}
+@media screen and (max-width: 375px) {
+   .country-wrapper {
+      gap: 0px;
+   }
+
+   .country-box {
+      transform: scale(0.7);
+      margin: -10%;
+   }
+   .country-box:hover {
+      transform: scale(0.75);
+      margin: -10%;
    }
 }
