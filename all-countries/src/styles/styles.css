@@ -1,6 +1,7 @@
 body {
    margin: 0;
    padding: 0;
+   background-color: var(--white)
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
@@ -10,8 +11,8 @@ body {
    --font: 'Wix Madefor Text', sans-serif;
 
    /* colours */
-   --accent-color-1: #A9FDC1;
-   --accent-color-2: #72AB82;
+   --primary-color: #A9FDC1;
+   --accent-color: #72AB82;
    --white: #F5FCF7;
    --black: #232423;
    --lightgrey: #C3C9C5;
@@ -28,13 +29,15 @@ body {
 /* Header */
 
 .header-wrapper {
-   outline: 1px red solid;
    text-align: center;
    margin-bottom: 50px;
+   background-color: var(--accent-color);
 }
 
 .header-wrapper h1 {
-   font-size: 50px;
+   font-size: 60px;
+   font-family: var(--font);
+   color: var(--white);
 }
 
 /* Countries */
@@ -50,8 +53,7 @@ body {
 .country-wrapper {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   outline: 1px peru solid;
-   gap: 30px;
+   gap: 50px;
    justify-content: space-evenly;
    justify-items: center;
    align-content: space-evenly;
@@ -59,7 +61,6 @@ body {
 }
 
 .country-search-bar {
-   outline: 1px red solid;
    height: 50px;
    max-width: 750px;
    width: 80%;
@@ -67,10 +68,10 @@ body {
    text-indent: 1em;
    font-size: 20px;
    margin-bottom: 50px;
+   color: var(--black);
 }
 
 .country-box {
-   outline: 1px red solid;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -81,13 +82,16 @@ body {
    width: 100%;
    box-sizing: border-box;
    transition: 500ms;
+   background-color: var(--accent-color);
+   color: var(--white);
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .country-box:hover {
    opacity: 70%;
-   background-color: rgb(98, 255, 255);
    cursor: pointer;
    transform: translateY(-10px);
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .country-box img {
@@ -95,13 +99,11 @@ body {
    height: 120px;
    width: auto;
    border-radius: 10px;
-   outline: 1px green solid;
 }
 
 .country-img-container {
    display: flex;
    justify-content: center;
-   outline: 1px red solid;
    flex-direction: column;
    align-items: center;
    flex-wrap: wrap;
