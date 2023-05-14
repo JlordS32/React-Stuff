@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import ReactDOM, { findDOMNode } from'react-dom';
+import { useFetch } from './useFetch.jsx'
 
 const Country = ({ country: {
    name: {
@@ -30,24 +31,8 @@ const Country = ({ country: {
 }
 
 const App = (props) => {
-   const [data, setData] = useState([])
-
-   useEffect(() => {
-      fetchData();
-   }, [])
-
-   const fetchData = async () => {
-      const url = 'https://restcountries.com/v3.1/all'
-      try {
-         const response = await fetch(url);
-         const data = await response.json();
-         setData(data);
-         console.log(data);
-      } catch (error) {
-         console.log(error);
-      }
-   }
-
+   const url = 'https://restcountries.com/v3.1/all';
+   const data = useFetch(url);
    return (
    <div className='App'>
       <h1>Fetching Data Using Hook</h1>
@@ -56,7 +41,7 @@ const App = (props) => {
          <p>There are {data.length} countries in the api</p>
          <div className='countries-wrapper'>
             {data.map((country) => (
-               <Country country={country}/>
+               <Country country={country} key={country.name.common}/>
             ))}
          </div>
       </div>
