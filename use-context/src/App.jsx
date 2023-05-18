@@ -26,6 +26,10 @@ const App = () => {
    }, [lists]);
 
    const handleClick = () => {
+      if (input === '') {
+         alert('Enter some bloody inputs mate!')
+         return;
+      };
       setLists([...lists, input]);
       setInput('');
    };
