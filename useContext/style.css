@@ -1,0 +1,16 @@
+* {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+.nav-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 40px;
+}
+
+.nav-container > div {
+   margin-inline-start: 30px;
+   font-size: 30px;
+}
