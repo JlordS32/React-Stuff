@@ -1,15 +1,15 @@
 import React, { useState, useMemo, memo } from 'react';
 import './app.modules.css';
 
-function Swatch({color}) {
-   console.log(`Swatch rendered ${color}`);
+function Swatch({params}) {
+   console.log(`Swatch rendered ${params.color}`);
    return (
       <div
          style={{
             margin: 2,
             width: 75,
             height: 75,
-            backgroundColor: color
+            backgroundColor: params.color
          }}>
       </div>
    )
@@ -32,6 +32,8 @@ function App() {
       setColor(colorInput);
    }
 
+   const params = useMemo(() => ({ color }), [color]);
+
    return (
       <div className='app'>
          <div
@@ -51,7 +53,7 @@ function App() {
             </button>
          </div>
          <div>
-            <MemoedSwatch color={color} />
+            <MemoedSwatch params={params} />
          </div>
       </div>
    )
