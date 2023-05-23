@@ -1,7 +1,18 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { Context } from './App';
 
 const Body = () => {
+
+   const { name, setName } = useContext(Context);
+
+   const handleClick = () => {
+      setName(prev => {
+         const uwu = prev === 'Hello World!' ? 'Shit' : 'Hello World!';
+         
+         return uwu;
+      });
+   };
+
    return (
       <>
          <h1>{name}</h1>
