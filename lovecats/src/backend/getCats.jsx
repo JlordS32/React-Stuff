@@ -17,15 +17,24 @@ export const fetchCats = async () => {
     }
 };
 
-export const fetchCatImage = async (breedId) => {
+export const fetchCatImage = async (breedId = '') => {
     try {
-        const response = axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&size=small&mime_types=jpg`,{
-            headers: {
-                'x-api-key': API_KEY
-            }
-        });
-        const data = (await response).data;
-        return data[0];
+        if (breedId === '') {
+            const response = axios.get('https://api.thecatapi.com/v1/images/search');
+
+            const data = (await response).data;
+            return data[0];
+        }
+
+        else {
+            const response = axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&size=small&mime_types=jpg`,{
+                headers: {
+                    'x-api-key': API_KEY
+                }
+            });
+            const data = (await response).data;
+            return data[0];
+        }      
     } catch (err) {
         console.log(err);
     }
