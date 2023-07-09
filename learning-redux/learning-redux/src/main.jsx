@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
+import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import store from './store';
+import userReducer from './features/Users'
+
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+  },
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
       <App />
-    </React.StrictMode>
-  </Provider>
+    </Provider>
+  </React.StrictMode>
 )

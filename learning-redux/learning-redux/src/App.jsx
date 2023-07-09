@@ -1,14 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import Login from './components/Login';
+import Profile from './components/Profile';
 
 const App = () => {
 
-   const counter = useSelector((state) => state.counter)
-
    return (
       <div className='app-container'>  
-         <h1> Counter App </h1>
-         <h2>{counter}</h2>
+         <Profile />
+         <Login />
       </div>
    )
 };
