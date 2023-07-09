@@ -4,10 +4,12 @@ import App from './App.jsx';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from './features/Users'
+import colorReducer from './features/Theme';
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    theme: colorReducer
   },
 });
 
