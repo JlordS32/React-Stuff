@@ -20,7 +20,7 @@ const App = () => {
             justifyContent: 'center',
             overflow: 'hidden',
             fontFamily: 'sans-serif',
-            backgroundColor: {themeColor},
+            backgroundColor: themeColor,
          }}
       >  
          <Profile />
