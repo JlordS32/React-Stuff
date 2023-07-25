@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 function Profile() {
+
+   const users = useSelector(
+      state => state.user.value
+   );
+
    const {
       name,
       age,
       email
-   } = useSelector(
-      state => state.user.value
-   );
+   } = users;
 
    const themeColor = useSelector(state => state.theme.value);
+
+   useEffect(() => {
+      console.log(users, themeColor);
+   }, [themeColor, users]);
 
    return (
       <div>

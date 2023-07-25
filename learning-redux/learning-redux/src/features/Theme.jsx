@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialStateValue = '';
 
-export const themeSlice = createSlice({
+const themeSlice = createSlice({
    name: 'theme',
    initialState: {
       value: initialStateValue,
