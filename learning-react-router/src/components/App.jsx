@@ -1,20 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/app.module.css';
+import {
+	createBrowserRouter,
+	createRoutesFromElements,
+	Route,
+	RouterProvider,
+} from 'react-router-dom';
+
+// Components
 import Home from './home/Home';
+import About from './about/About';
+import RootLayout from './layout/RootLayout';
 
 function App() {
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route path='/' element={<RootLayout />}>
+				<Route
+					index
+					element={<Home />}
+				/>
+				<Route
+					path='about'
+					element={<About />}
+				/>
+			</Route>
+		)
+	);
+
 	return (
-		<div className={styles['app']}>
-			<header>
-				<div>Some Logo</div>
-				<nav>
-					<div>Home</div>
-					<div>Contact</div>
-					<div>About</div>
-				</nav>
-			</header>
-			<Home />
-		</div>
+      <RouterProvider router={router} />
 	);
 }
 
