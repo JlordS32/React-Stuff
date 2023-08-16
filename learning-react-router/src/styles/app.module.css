@@ -1,0 +1,70 @@
+:root {
+   --text: #2c070f;
+   --background: #ffffff;
+   --primary: #e6607d;
+   --secondary: #f6c6d0;
+   --accent: #cf2046;
+}
+
+.app {
+   display: flex;
+   outline: 1px red solid;
+   height: 100vh;
+   width: 100%;
+   box-sizing: border-box;
+   flex-direction: column;
+   color: var(--text);
+   background-color: var(--background);
+}
+
+::selection {
+   background-color: var(--primary);
+   color: var(--background);
+}
+
+.app>header {
+   padding: 1rem 0;
+   background-color: antiquewhite;
+   display: flex;
+}
+
+.app > header > div {
+   padding: 0;
+   border: 0;
+   margin: 0;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2rem;
+   margin-left: 2rem;
+   padding: 0 1rem;
+   transition: transform 300ms;
+}
+
+.app > header > div:hover {
+   transform: scale(1.05);
+   cursor: pointer;
+}
+
+.app > header > nav {
+   display: flex;
+   gap: 1.5rem;
+   font-size: 1.75rem;
+   font-weight: 500;
+   color: var(--accent);
+   margin-left: auto;
+   margin-right: 2rem;
+}
+
+.app > header > nav > div {
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+   transition: background-color 0.3s;
+}
+
+.app > header > nav > div:nth-child(1n):hover {
+   color: var(--background);
+   background-color: var(--primary);
+   cursor: pointer;
+}
