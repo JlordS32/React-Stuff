@@ -1,0 +1,12 @@
+.home {
+   outline: 1px red solid;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.home > section {
+   display: flex;
+   width: 70%;
+   padding: 2rem;
+}
