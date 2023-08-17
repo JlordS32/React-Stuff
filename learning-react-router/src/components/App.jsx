@@ -10,7 +10,11 @@ import {
 // Components
 import Home from './home/Home';
 import About from './about/About';
+import Help from './help/Help';
+import PageNotFound from './layout/PageNotFound';
 import RootLayout from './layout/RootLayout';
+import Faq from './help/Faq';
+import Contact from './help/Contact';
 
 function App() {
 	const router = createBrowserRouter(
@@ -24,6 +28,15 @@ function App() {
 					path='about'
 					element={<About />}
 				/>
+				<Route
+					path='help'
+					element={<Help />}
+				>
+               <Route path='faq' element={<Faq />}/>
+               <Route path='contact' element={<Contact />}/>
+            </Route>
+
+            <Route path='*' element={<PageNotFound />} />
 			</Route>
 		)
 	);

@@ -67,6 +67,10 @@
    color: var(--text);
 }
 
+.nav-items.active  {
+   outline: 1px red solid;
+}
+
 .nav-items:nth-child(1n):hover {
    color: var(--background);
    background-color: var(--primary);
