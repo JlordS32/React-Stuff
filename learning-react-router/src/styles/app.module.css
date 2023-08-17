@@ -1,14 +1,15 @@
 :root {
-   --text: #2c070f;
-   --background: #ffffff;
-   --primary: #e6607d;
-   --secondary: #f6c6d0;
-   --accent: #cf2046;
+   --text: #ffffff;
+   --background: #011113;
+   --primary: #96eef8;
+   --secondary: #032b30;
+   --accent: #0fd9f0;
+
+   background-color: var(--background);
 }
 
 .app {
    display: flex;
-   outline: 1px red solid;
    height: 100vh;
    width: 100%;
    box-sizing: border-box;
@@ -24,8 +25,10 @@
 
 .app>header {
    padding: 1rem 0;
-   background-color: antiquewhite;
+   background-color: var(--secondary);
    display: flex;
+   position: fixed;
+   width: 100%;
 }
 
 .nav-logo {
@@ -38,18 +41,21 @@
    align-items: center;
    font-size: 2rem;
    margin-left: 2rem;
-   padding: 0 1rem;
+   padding: 0rem 1rem;
    transition: transform 300ms;
    text-decoration: none;
-   color: var(--text);
+   color: var(--primary);
+   font-weight: 700;
+   transition: 1s;
 }
 
 .nav-logo:hover {
    transform: scale(1.05);
    cursor: pointer;
+   letter-spacing: 1rem;
 }
 
-.app > header > nav {
+.app>header>nav {
    display: flex;
    gap: 1.5rem;
    font-size: 1.75rem;
@@ -67,7 +73,7 @@
    color: var(--text);
 }
 
-.nav-items.active  {
+.nav-items.active {
    outline: 1px red solid;
 }
 
@@ -75,4 +81,12 @@
    color: var(--background);
    background-color: var(--primary);
    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+   .nav-items {
+      display: none;
+   }
+
 }

@@ -1,12 +1,84 @@
-.home {
-   outline: 1px red solid;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
+:root {
+   --text: #ffffff;
+   --background: #011113;
+   --primary: #96eef8;
+   --secondary: #032b30;
+   --accent: #0fd9f0;
 }
 
-.home > section {
+.home {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: 84px;
+   width: 100%;
+}
+
+.home>section {
    display: flex;
    width: 70%;
    padding: 2rem;
+   padding: 10rem 0;
+}
+
+.hero-title {
+   font-size: 8rem;
+   display: flex;
+   align-items: center;
+   color: var(--primary);
+}
+
+.hero-content {
+   font-size: 1.4rem;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   padding: 2rem 4rem;
+}
+
+@media screen and (max-width: 1400px) {
+   .home>section {
+      flex-direction: column;
+   }
+   
+   .hero-content {
+      margin-top: 5rem;
+   }
+}
+
+
+@media screen and (max-width: 900px) {   
+   .hero-title {
+      font-size: 6rem;
+   }
+
+   .hero-content {
+      font-size: 1rem;
+   }
+
+   .home>section {
+      padding: 6rem 0;
+   }
+}
+@media screen and (max-width: 600px) {   
+   .hero-title {
+      font-size: 4.5rem;
+   }
+
+   .hero-content {
+      font-size: 1rem;
+      padding: 0;
+   }
+
+   .home>section {
+      padding: 6rem 0;
+   }
+}
+@media screen and (max-width: 470px) {   
+   .hero-title {
+      font-size: 3.5rem;
+   }
+
 }

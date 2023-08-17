@@ -10,7 +10,7 @@ function RootLayout() {
 					className={styles['nav-logo']}
 					to='/'
 				>
-					Some Logo
+					Conor Games 
 				</NavLink>
 				<nav>
 					<NavLink
