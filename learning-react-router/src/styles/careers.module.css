@@ -14,3 +14,38 @@
    margin-top: 84px;
    width: 100%;
 }
+
+.container {
+   width: 1200px;
+   max-width: 100%;
+}
+
+.container>h1 {
+   color: var(--primary);
+   font-size: 3rem;
+}
+
+.careers-items-container {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   margin-top: 5rem;
+}
+
+.career-item {
+   font-size: 1rem;
+   background-color: var(--secondary);
+   padding: 1rem 2rem;
+   border-radius: 10px;
+   transition: transform 150ms ease-in;
+}
+
+.career-item>a {
+   color: var(--text);
+   text-decoration: none;
+}
+
+.career-item:hover {
+   transform: translateY(-2%) scale(1.01);
+   opacity: 0.8;
+}

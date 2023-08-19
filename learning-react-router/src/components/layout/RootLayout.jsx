@@ -31,6 +31,12 @@ function RootLayout() {
 					>
 						Help
 					</NavLink>
+					<NavLink
+						className={styles['nav-items']}
+						to='careers'
+					>
+						Careers
+					</NavLink>
 				</nav>
 			</header>
 

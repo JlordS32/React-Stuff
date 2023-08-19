@@ -16,7 +16,7 @@ import RootLayout from './layout/RootLayout';
 import Faq from './help/Faq';
 import Contact from './help/Contact';
 import CareersLayout from './layout/CareersLayout';
-import Careers from './careers/Careers';
+import Careers, { careersLoader } from './careers/Careers';
 
 function App() {
 	const router = createBrowserRouter(
@@ -53,6 +53,7 @@ function App() {
 					<Route
 						index
 						element={<Careers />}
+						loader={careersLoader}
 					/>
 				</Route>
 
