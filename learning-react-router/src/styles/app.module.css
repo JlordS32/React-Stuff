@@ -58,7 +58,7 @@
 .app>header>nav {
    display: flex;
    gap: 1.5rem;
-   font-size: 1.75rem;
+   font-size: 1.5rem;
    font-weight: 500;
    color: var(--accent);
    margin-left: auto;
@@ -93,11 +93,7 @@
 }
 
 @media screen and (max-width: 768px) {
-
    .nav-items {
       display: none;
    }
-
-
-
 }
