@@ -38,6 +38,43 @@
    padding: 2rem 4rem;
 }
 
+.home > main { 
+   width: 1200px;
+   max-width: 100%;
+}
+
+.home > p,
+.home > main > article > section > p,
+.home > main > article > section > h2 {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+.home > main > article > section > h2 {
+   margin-bottom: 1rem;
+   font-size: 2rem;
+}
+
+.home > main > article {
+   padding: 2rem 4rem;
+   border-radius: 10px;
+   background-color: var(--secondary);
+   color: var(--primary);
+   display: flex;
+   gap: 2rem;
+}
+
+footer {
+   width: 100%;
+   box-sizing: border-box;
+   padding: 1.3rem 0;
+   text-align: center;
+   background-color: var(--secondary);
+   margin-top: 5rem;
+}
+
+
 @media screen and (max-width: 1400px) {
    .home>section {
       flex-direction: column;
@@ -62,6 +99,13 @@
       padding: 6rem 0;
    }
 }
+
+@media screen and (max-width: 720px) {
+   .home > main > article {
+      flex-direction: column;
+   }
+}
+
 @media screen and (max-width: 600px) {   
    .hero-title {
       font-size: 4.5rem;
