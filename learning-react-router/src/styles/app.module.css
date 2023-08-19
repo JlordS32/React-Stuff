@@ -83,10 +83,21 @@
    cursor: pointer;
 }
 
+.not-found {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 84px;
+   width: 100%;
+}
+
 @media screen and (max-width: 768px) {
 
    .nav-items {
       display: none;
    }
+
+
 
 }

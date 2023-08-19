@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from '../../styles/app.module.css';
 
 function PageNotFound() {
 	return (
-		<div>
+		<div className={styles['not-found']}>
 			<h1>Too bad, page not found!</h1>
 			<p>
 				Sint sint ullamco non dolore. Excepteur pariatur nulla eiusmod et
