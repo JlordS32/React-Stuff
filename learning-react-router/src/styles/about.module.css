@@ -1,3 +1,13 @@
+:root {
+   --text: #ffffff;
+   --background: #011113;
+   --primary: #96eef8;
+   --secondary: #032b30;
+   --accent: #0fd9f0;
+
+   background-color: var(--background);
+}
+
 .about {
    display: flex;
    flex-direction: column;
@@ -7,8 +17,23 @@
    width: 100%;
 }
 
+.container > h1 {
+   color: var(--primary);
+   font-size: 3rem;
+}
+
 .container {
-   outline: 1px red solid;
    width: 1200px;
    max-width: 100%;
+}
+
+.main-page {
+   display: flex;
+   flex-direction: row;
+   padding: 2rem 4rem;
+   border-radius: 10px;
+   background-color: var(--secondary);
+   margin-top: 5rem;
+   color: var(--primary);
+   gap: 3.5rem;
 }

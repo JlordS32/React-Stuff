@@ -1,0 +1,16 @@
+:root {
+   --text: #ffffff;
+   --background: #011113;
+   --primary: #96eef8;
+   --secondary: #032b30;
+   --accent: #0fd9f0;
+}
+
+.careers {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 84px;
+   width: 100%;
+}

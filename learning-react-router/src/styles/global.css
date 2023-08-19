@@ -16,3 +16,9 @@ body {
    border: 0;
    --background: #011113;
 }
+
+a.active {
+   background-color: var(--primary);
+   color: var(--secondary);
+   border: 0;
+}
