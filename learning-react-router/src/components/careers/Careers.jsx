@@ -25,7 +25,7 @@ function Careers() {
 }
 
 export const careersLoader = async () => {
-	const res = await fetch('http://localhost:4000/careers');
+	const res = await fetch('https://careersapi.vercel.app/api/careers');
 
 	const data = await res.json();
 
