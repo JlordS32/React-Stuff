@@ -17,6 +17,8 @@ import Faq from './help/Faq';
 import Contact from './help/Contact';
 import CareersLayout from './layout/CareersLayout';
 import Careers, { careersLoader } from './careers/Careers';
+import CareerDetails, { careerDetailsLoader } from './careers/CareerDetails';
+import CareerNotFound from './careers/CareerNotFound';
 
 function App() {
 	const router = createBrowserRouter(
@@ -39,6 +41,7 @@ function App() {
 				>
 					<Route
 						index
+						path='faq'
 						element={<Faq />}
 					/>
 					<Route
@@ -49,11 +52,19 @@ function App() {
 				<Route
 					path='careers'
 					element={<CareersLayout />}
+					loader={careersLoader}
+					errorElement={<CareerNotFound />}
 				>
 					<Route
 						index
 						element={<Careers />}
 						loader={careersLoader}
+					/>
+
+					<Route
+						path=':id'
+						element={<CareerDetails />}
+						loader={careerDetailsLoader}
 					/>
 				</Route>
 

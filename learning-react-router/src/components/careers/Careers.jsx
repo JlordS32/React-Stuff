@@ -9,11 +9,11 @@ function Careers() {
 		<>
 			{careers?.map((career) => {
 				return (
-					<div className={styles['career-item']}>
-						<Link
-							to='/'
-							key={career.id}
-						>
+					<div
+						className={styles['career-item']}
+						key={career.id}
+					>
+						<Link to={career.id.toString()}>
 							<h2>{career.title}</h2>
 							<p>Based in {career.location}</p>
 						</Link>
@@ -28,6 +28,10 @@ export const careersLoader = async () => {
 	const res = await fetch('http://localhost:4000/careers');
 
 	const data = await res.json();
+
+	if (!res.ok) {
+		throw Error('Could not find fetch careers!');
+	}
 
 	return data;
 };

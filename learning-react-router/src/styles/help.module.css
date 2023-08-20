@@ -1,10 +1,4 @@
 :root {
-   --text: #ffffff;
-   --background: #011113;
-   --primary: #96eef8;
-   --secondary: #032b30;
-   --accent: #0fd9f0;
-
    background-color: var(--background);
 }
 
@@ -12,7 +6,6 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 84px;
    width: 100%;
 }
 
@@ -22,7 +15,7 @@
 }
 
 .container>h1 {
-   color: var(--primary);
+   color: var(--text);
    font-size: 3rem;
 }
 
@@ -46,7 +39,7 @@
 
 .nav-link>.nav-items:hover {
    background-color: var(--primary);
-   color: var(--secondary);
+   color: var(--background);
    outline: 0;
 }
 
@@ -54,14 +47,14 @@
 .contact {
    margin-top: 4rem;
    background-color: var(--secondary);
-   color: var(--primary);
+   color: var(--text);
    padding: 1rem 4rem;
    border-radius: 10px;
 }
 
 .faq>h1,
 .contact>h1 {
-   color: var(--primary);
+   color: var(--text);
    font-size: 2rem;
 }
 
@@ -76,14 +69,14 @@
 
 .contact>form>input,
 .contact>form>textarea {
-   background-color: var(--text);
+   background-color: var(--background);
    border: 0;
    outline: 0;
    font-size: 1rem;
    font-family: 'Inter', sans-serif;
    padding: 0.5rem 1rem;
    border-radius: 10px;
-   color: var(--secondary);
+   color: var(--primary);
    max-width: 100%;
 }
 
@@ -100,7 +93,7 @@
    padding: 0;
    border: 0;
    background-color: var(--accent);
-   color: var(--text);
+   color: var(--background);
    box-shadow: 0px 42px 56px 21px rgba(0, 0, 0, 0.2);
    border-radius: 10px;
    transition: transform 300ms;
@@ -116,11 +109,12 @@
    transform: scale(1);
 }
 
-.help > footer {
+.help>footer {
    width: 100%;
    box-sizing: border-box;
    padding: 1.3rem 0;
    text-align: center;
-   background-color: var(--secondary);
+   background-color: var(--primary);
+   color: var(--background);
    margin-top: 5rem;
 }

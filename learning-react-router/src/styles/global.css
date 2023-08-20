@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-   --text: #ffffff;
-   --background: #011113;
-   --primary: #96eef8;
-   --secondary: #032b30;
-   --accent: #0fd9f0;
+   --text: #0f1014;
+   --background: #ffffff;
+   --primary: #463537;
+   --secondary: #dfe0e7;
+   --accent: #708e6b;
 }
 
 body {
@@ -14,11 +14,10 @@ body {
    padding: 0;
    margin: 0;
    border: 0;
-   --background: #011113;
 }
 
 a.active {
-   background-color: var(--primary);
-   color: var(--secondary);
+   background-color: var(--accent);
+   color: var(--background);
    border: 0;
 }

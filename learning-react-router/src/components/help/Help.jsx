@@ -28,7 +28,7 @@ function Help() {
 					<section>
 						<nav className={styles['nav-link']}>
 							<NavLink
-								index
+								to='faq'
 								className={styles['nav-items']}
 							>
 								View the FAQ

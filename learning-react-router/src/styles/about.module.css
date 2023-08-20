@@ -1,10 +1,4 @@
 :root {
-   --text: #ffffff;
-   --background: #011113;
-   --primary: #96eef8;
-   --secondary: #032b30;
-   --accent: #0fd9f0;
-
    background-color: var(--background);
 }
 
@@ -13,12 +7,11 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   margin-top: 84px;
    width: 100%;
 }
 
-.container > h1 {
-   color: var(--primary);
+.container>h1 {
+   color: var(--text);
    font-size: 3rem;
 }
 
@@ -34,6 +27,6 @@
    border-radius: 10px;
    background-color: var(--secondary);
    margin-top: 5rem;
-   color: var(--primary);
+   color: var(--text);
    gap: 3.5rem;
 }

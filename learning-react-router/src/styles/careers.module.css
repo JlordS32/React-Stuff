@@ -1,17 +1,8 @@
-:root {
-   --text: #ffffff;
-   --background: #011113;
-   --primary: #96eef8;
-   --secondary: #032b30;
-   --accent: #0fd9f0;
-}
-
 .careers {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   margin-top: 84px;
    width: 100%;
 }
 
@@ -21,7 +12,7 @@
 }
 
 .container>h1 {
-   color: var(--primary);
+   color: var(--text);
    font-size: 3rem;
 }
 
@@ -48,5 +39,9 @@
 
 .career-item:hover {
    transform: translateY(-2%) scale(1.01);
-   opacity: 0.8;
+   background-color: var(--accent);
+   
+   & a {
+      color: var(--background);
+   }
 }

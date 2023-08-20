@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/app.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
+import Breadcrumbs from '../Breadcrumbs';
 
 function RootLayout() {
 	return (
@@ -10,7 +11,7 @@ function RootLayout() {
 					className={styles['nav-logo']}
 					to='/'
 				>
-					Conor Games 
+					Dream
 				</NavLink>
 				<nav>
 					<NavLink
@@ -39,8 +40,8 @@ function RootLayout() {
 					</NavLink>
 				</nav>
 			</header>
-
 			<main>
+				<Breadcrumbs />
 				<Outlet />
 			</main>
 		</div>
