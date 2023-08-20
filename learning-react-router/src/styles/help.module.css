@@ -108,13 +108,3 @@
    cursor: pointer;
    transform: scale(1);
 }
-
-.help>footer {
-   width: 100%;
-   box-sizing: border-box;
-   padding: 1.3rem 0;
-   text-align: center;
-   background-color: var(--primary);
-   color: var(--background);
-   margin-top: 5rem;
-}

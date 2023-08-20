@@ -11,7 +11,7 @@ function RootLayout() {
 					className={styles['nav-logo']}
 					to='/'
 				>
-					Dream
+					Conor Dream
 				</NavLink>
 				<nav>
 					<NavLink
@@ -44,6 +44,10 @@ function RootLayout() {
 				<Breadcrumbs />
 				<Outlet />
 			</main>
+
+			<footer>
+				&copy; Copyright 2023, Conor Goulding. All rights reserved.
+			</footer>
 		</div>
 	);
 }

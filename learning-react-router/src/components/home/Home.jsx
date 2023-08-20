@@ -7,37 +7,49 @@ function Home() {
 			<section>
 				<div className={styles['hero-title']}>The dream!</div>
 				<div className={styles['hero-content']}>
-					Pariatur esse aliqua aliquip nisi id cupidatat excepteur
-					voluptate ipsum. Voluptate commodo quis minim commodo. Enim
-					incididunt aliquip voluptate consequat proident officia ullamco
-					esse occaecat anim. Nisi in nostrud quis aliqua laborum minim
-					laboris mollit quis est ad dolore nulla laborum. Duis incididunt
-					sit in ad dolor.
+					Step into a realm where possibilities know no bounds. "The Dream"
+					invites you to venture into a world of endless horizons, where
+					your aspirations take flight and your ambitions find their wings.
+					With every heartbeat, "The Dream" encapsulates the essence of
+					exploration, pushing the boundaries of what you thought was
+					achievable. Experience a symphony of innovation and passion,
+					where your desires and determination converge to create a new
+					reality. Join us in shaping a tomorrow that is painted with the
+					colors of your boldest visions.
 				</div>
 			</section>
 
 			<main>
 				<article>
 					<section>
-						<h2>This is heading 1</h2>
+						<h2>Unveiling the Canvas of Possibility</h2>
 						<p>
-							Pariatur esse aliqua aliquip nisi id cupidatat excepteur
-							voluptate ipsum. Voluptate commodo quis minim commodo. Enim
-							incididunt aliquip voluptate consequat proident officia
-							ullamco esse occaecat anim. Nisi in nostrud quis aliqua
-							laborum minim laboris mollit quis est ad dolore nulla
-							laborum. Duis incididunt sit in ad dolor.
+							"The Dream" is not just a concept – it's a canvas waiting
+							to be painted with the hues of your imagination. In this
+							captivating landscape, the limitations of today are mere
+							stepping stones to the boundless opportunities of tomorrow.
+							With each stroke of innovation, "The Dream" transforms the
+							ordinary into the extraordinary, breathing life into ideas
+							that were once thought to be beyond reach. Whether you're a
+							creator, a thinker, or a pioneer, this is your realm to
+							shape, mold, and redefine what's possible.
 						</p>
 					</section>
 					<section>
-						<h2 className={styles['spacing']}>This is heading 2</h2>
+						<h2 className={styles['spacing']}>
+							Navigating the Constellations of Ambition
+						</h2>
 						<p>
-							Pariatur esse aliqua aliquip nisi id cupidatat excepteur
-							voluptate ipsum. Voluptate commodo quis minim commodo. Enim
-							incididunt aliquip voluptate consequat proident officia
-							ullamco esse occaecat anim. Nisi in nostrud quis aliqua
-							laborum minim laboris mollit quis est ad dolore nulla
-							laborum. Duis incididunt sit in ad dolor.
+							Guided by the North Star of ambition, "The Dream" charts a
+							course through the constellations of your desires. It's a
+							celestial journey that aligns your aspirations with the
+							universe's grand design. As you navigate this cosmos of
+							potential, every challenge becomes a launchpad, and
+							setbacks are mere interludes in your epic narrative. "The
+							Dream" beckons you to follow your own constellation,
+							forging a path that is uniquely yours – one that sparkles
+							with the brilliance of achievement and the determination to
+							reach for the stars.
 						</p>
 					</section>
 				</article>
@@ -116,10 +128,6 @@ function Home() {
 					<h1>Keep dreaming!!!</h1>
 				</section>
 			</main>
-
-			<footer>
-				&copy; Copyright 2023, Conor Goulding. All rights reserved.
-			</footer>
 		</div>
 	);
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../../styles/help.module.css';
+import axios from 'axios';
 
 function Contact() {
 	const [formData, setFormData] = useState({
@@ -16,11 +17,18 @@ function Contact() {
 		});
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		// You can perform form submission logic here, such as sending data to a server
-		console.log('Form data:', formData);
-		// Reset the form after submission
+		try {
+			await axios.post(
+				'https://mailserver-seven.vercel.app/submit-form',
+				formData
+			);
+			alert('Form submitted successfully!');
+		} catch (error) {
+			console.error('Error submitting form:', error);
+		}
+
 		setFormData({
 			name: '',
 			email: '',

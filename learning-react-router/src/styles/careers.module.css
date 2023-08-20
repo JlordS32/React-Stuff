@@ -37,20 +37,10 @@
 }
 
 .career-item:hover {
-   transform: translateY(-2%) scale(1.01);
+   transform: translateY(-2%);
    background-color: var(--accent);
    
    & a {
       color: var(--background);
    }
-}
-
-.careers>footer {
-   width: 100%;
-   box-sizing: border-box;
-   padding: 1.3rem 0;
-   text-align: center;
-   background-color: var(--primary);
-   color: var(--background);
-   margin-top: 5rem;
 }
