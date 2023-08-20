@@ -2,13 +2,23 @@ import React from 'react';
 import styles from '../../styles/career-details.module.css';
 import { useLoaderData, useParams } from 'react-router-dom';
 
+// Scroll to the top of the page
+function scrollToTop() {
+	window.scrollTo({
+		top: 0 // Add smooth scrolling animation
+	});
+}
+
 function CareerDetails() {
 	const career = useLoaderData();
+
+	// Call the scrollToTop function when needed
+	scrollToTop();
 
 	return (
 		<div className={styles['career-details']}>
 			<div className={styles['container']}>
-				<h2>Details</h2>
+				<h2>Details: </h2>
 				<main>
 					<section>
 						<h2>{career.title}</h2>
@@ -18,9 +28,28 @@ function CareerDetails() {
 						<p>Location: {career.location}</p>
 						<div className='details'>
 							<h3>Description: </h3>
-							<p>{career.description} Proident voluptate occaecat irure aliqua proident elit esse qui nisi deserunt. Id consequat qui occaecat aliqua dolor exercitation amet sint ullamco sit eiusmod officia sit laboris. Excepteur irure laborum deserunt enim labore eiusmod. Aliquip aliquip minim sunt quis nulla officia ipsum.</p>
+							<p>
+								{career.description} Proident voluptate occaecat irure
+								aliqua proident elit esse qui nisi deserunt. Id
+								consequat qui occaecat aliqua dolor exercitation amet
+								sint ullamco sit eiusmod officia sit laboris. Excepteur
+								irure laborum deserunt enim labore eiusmod. Aliquip
+								aliquip minim sunt quis nulla officia ipsum.
+							</p>
 
-							<p>Dolore culpa cupidatat adipisicing aute veniam Lorem aliquip. Amet aute exercitation esse laborum. Lorem veniam exercitation tempor magna ipsum magna esse eu in commodo et ipsum mollit.Fugiat Lorem nostrud velit esse quis aute velit tempor magna. Incididunt consectetur quis id velit cillum mollit. In adipisicing et dolor fugiat proident aute anim nostrud. Consectetur consequat do aliqua dolore do cillum labore. Anim dolore occaecat reprehenderit esse voluptate ad sunt nisi laborum. Exercitation cillum quis exercitation nulla in amet enim aliquip eu anim veniam ullamco consectetur.</p>
+							<p>
+								Dolore culpa cupidatat adipisicing aute veniam Lorem
+								aliquip. Amet aute exercitation esse laborum. Lorem
+								veniam exercitation tempor magna ipsum magna esse eu in
+								commodo et ipsum mollit.Fugiat Lorem nostrud velit esse
+								quis aute velit tempor magna. Incididunt consectetur
+								quis id velit cillum mollit. In adipisicing et dolor
+								fugiat proident aute anim nostrud. Consectetur consequat
+								do aliqua dolore do cillum labore. Anim dolore occaecat
+								reprehenderit esse voluptate ad sunt nisi laborum.
+								Exercitation cillum quis exercitation nulla in amet enim
+								aliquip eu anim veniam ullamco consectetur.
+							</p>
 
 							<h3>
 								Duis deserunt excepteur laboris cillum dolor id ea ad
