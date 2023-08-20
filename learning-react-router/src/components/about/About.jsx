@@ -59,6 +59,10 @@ function About() {
 					</section>
 				</main>
 			</div>
+
+			<footer>
+				&copy; Copyright 2023, Conor Goulding. All rights reserved.
+			</footer>
 		</div>
 	);
 }
