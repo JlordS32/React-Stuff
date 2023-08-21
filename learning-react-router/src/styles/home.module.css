@@ -167,6 +167,12 @@
 	}
 }
 
+@media screen and (max-width: 1200px) {
+	.home > main > article,
+   .thedream {
+		border-radius: 0;
+	}
+}
 @media screen and (max-width: 720px) {
 	.home > main > article {
 		flex-direction: column;

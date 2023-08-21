@@ -10,23 +10,23 @@
 	width: 100vw;
 	box-sizing: border-box;
 }
-
 .container {
 	width: 1200px;
 	max-width: 100%;
 	box-sizing: border-box;
 }
 
-.container > h1 {
+.container > div > h1 {
 	color: var(--text);
 	font-size: clamp(2rem, 3vw, 3.25rem);
 }
 
-.container > p .main-page > section > p {
+.container > div > p,
+.main-page > section > p {
 	font-size: clamp(0.9rem, 3vw, 1.1rem);
 }
 
-.container > h2,
+.container > div > h2,
 .main-page > section > h2 {
 	font-size: clamp(1.45rem, 3vw, 2rem);
 }

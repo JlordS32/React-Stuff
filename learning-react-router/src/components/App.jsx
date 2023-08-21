@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles/app.module.css';
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -20,7 +19,28 @@ import Careers, { careersLoader } from './careers/Careers';
 import CareerDetails, { careerDetailsLoader } from './careers/CareerDetails';
 import CareerNotFound from './careers/CareerNotFound';
 
+// React Query
+import { QueryClientProvider, QueryClient } from 'react-query';
+
+const queryClient = new QueryClient();
+
 function App() {
+	return (
+		<QueryClientProvider client={queryClient}>
+			<AppRouter />
+		</QueryClientProvider>
+	);
+}
+
+function AppRouter() {
+	
+	const fetchCareers = async () => {
+		const res = await fetch('http://careersapi.vercel.app/api/careers');
+		const data = await res.json();
+
+		return data;
+	};
+	
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route
@@ -52,13 +72,13 @@ function App() {
 				<Route
 					path='careers'
 					element={<CareersLayout />}
-					loader={careersLoader}
+					loader={fetchCareers}
 					errorElement={<CareerNotFound />}
 				>
 					<Route
 						index
 						element={<Careers />}
-						loader={careersLoader}
+						loader={fetchCareers}
 					/>
 
 					<Route
