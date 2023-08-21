@@ -3,8 +3,10 @@ import { NavLink, Outlet } from 'react-router-dom';
 import Faq from './Faq';
 import Contact from './Contact';
 import styles from '../../styles/help.module.css';
+import { scrollToTop } from '../careers/CareerDetails';
 
 function Help() {
+	scrollToTop();
 	return (
 		<div className={styles['help']}>
 			<div className={styles['container']}>

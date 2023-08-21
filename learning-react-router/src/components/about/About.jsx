@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from '../../styles/about.module.css';
 import { Navigate } from 'react-router-dom';
+import { scrollToTop } from '../careers/CareerDetails';
 
 function About() {
 	// const [user, setUser] = useState('mario');
@@ -8,6 +9,7 @@ function About() {
 	// if (!user) {
 	// 	return <Navigate to="/" replace={true}/>
 	// }
+	scrollToTop();
 
 	return (
 		<div className={styles['about']}>

@@ -3,7 +3,7 @@ import styles from '../../styles/career-details.module.css';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 // Scroll to the top of the page
-function scrollToTop() {
+export function scrollToTop() {
 	window.scrollTo({
 		top: 0 // Add smooth scrolling animation
 	});

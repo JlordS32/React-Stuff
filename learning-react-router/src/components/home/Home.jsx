@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from '../../styles/home.module.css';
+import { scrollToTop } from '../careers/CareerDetails';
 
 function Home() {
+
+	scrollToTop();
+
 	return (
 		<div className={styles['home']}>
 			<section>

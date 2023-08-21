@@ -1,11 +1,13 @@
 import React, { useEffect, useMemo } from 'react';
 import styles from '../../styles/careers.module.css';
 import { useLoaderData, Link } from 'react-router-dom';
+import { scrollToTop } from './CareerDetails';
 
 function Careers() {
 	const careers = useLoaderData();
 
 	// TODO memoize/cache API Calls
+	scrollToTop();
 
 	return (
 		<>
