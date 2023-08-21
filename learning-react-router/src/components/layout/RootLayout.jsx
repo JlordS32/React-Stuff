@@ -40,8 +40,10 @@ function RootLayout() {
 					</NavLink>
 				</nav>
 			</header>
-			<main>
+			<section className={styles['breadcrumbs-container']}>
 				<Breadcrumbs />
+			</section>
+			<main>
 				<Outlet />
 			</main>
 

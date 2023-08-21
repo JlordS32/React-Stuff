@@ -10,8 +10,7 @@
 }
 
 .container {
-   width: 1200px;
-   max-width: 100%;
+   width: clamp(70%, 1000px, 85%);
 }
 
 .container>h1 {

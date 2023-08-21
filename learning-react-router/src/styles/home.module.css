@@ -1,194 +1,199 @@
 .home {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }
 
-.home>section {
-   display: flex;
-   width: 70%;
-   padding: 2rem;
-   padding: 10rem 0;
+.home > section {
+	display: flex;
+	width: 70%;
+	padding: 2rem;
+	padding: 10rem 0;
 }
 
 .hero-title {
-   font-size: 8rem;
-   display: flex;
-   align-items: center;
-   color: var(--text);
+	font-size: 8rem;
+	display: flex;
+	align-items: center;
+	color: var(--text);
 }
 
 .hero-content {
-   font-size: 1.4rem;
-   text-align: center;
-   justify-content: center;
-   align-items: center;
-   display: flex;
-   padding: 2rem 4rem;
+	font-size: 1.4rem;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	padding: 2rem 4rem;
 }
 
-.home>main {
-   width: 1200px;
-   max-width: 100%;
+.home > main {
+	width: 1200px;
+	max-width: 100%;
 }
 
-.home>p,
-.home>main>article>section>p,
-.home>main>article>section>h2 {
-   margin: 0;
-   padding: 0;
-   border: 0;
+.home > p,
+.home > main > article > section > p,
+.home > main > article > section > h2 {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-.home>main>article>section>h2 {
-   margin-bottom: 1rem;
-   font-size: 2rem;
+.home > main > article > section > h2 {
+	margin-bottom: 1rem;
+	font-size: 2rem;
 }
 
-.home>main>article {
-   padding: 2rem 4rem;
-   border-radius: 10px;
-   background-color: var(--secondary);
-   color: var(--text);
-   display: flex;
-   gap: 2rem;
+.home > main > article {
+	padding: 2rem 4rem;
+	border-radius: 10px;
+	background-color: var(--secondary);
+	color: var(--text);
+	display: flex;
+	gap: 2rem;
 }
 
 .livingthedream {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-top: 5rem;
-   flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5rem;
+	flex-direction: column;
 }
 
-.livingthedream>h1,
-.livingthedream>h2 {
-   margin: 0;
+.livingthedream > h1,
+.livingthedream > h2 {
+	margin: 0;
 }
 
-.livingthedream>h1 {
-   font-size: clamp(3rem, 4vw, 5rem);
-   margin-top: 5rem;
-   text-align: center;
+.livingthedream > h1 {
+	font-size: clamp(3rem, 4vw, 5rem);
+	margin-top: 5rem;
+	text-align: center;
 }
 
-.livingthedream>h2 {
-   margin: 3rem 0;
-   font-size: clamp(2rem, 4vw, 3rem);
-   ;
-   margin-bottom: 5rem;
+.livingthedream > h2 {
+	margin: 3rem 0;
+	font-size: clamp(2rem, 4vw, 3rem);
+	margin-bottom: 5rem;
 }
 
-.livingthedream>h2>span {
-   font-size: clamp(3rem, 4vw, 5rem);
+.livingthedream > h2 > span {
+	font-size: clamp(3rem, 4vw, 5rem);
 }
 
-.livingthedream>iframe {
-   border-radius: 10px;
-   box-shadow: 0px 32px 54px -5px rgba(0, 0, 0, 0.4);
-   width: 800px;
-   height: 400px;
-   max-width: 100%;
-   max-height: 100%;
-   aspect-ratio: 16 / 9;
+.livingthedream > iframe {
+	border-radius: 10px;
+	box-shadow: 0px 32px 54px -5px rgba(0, 0, 0, 0.4);
+	width: 800px;
+	height: 400px;
+	max-width: 100%;
+	max-height: 100%;
+	aspect-ratio: 16 / 9;
 }
 
 .thedream {
-   background-color: var(--secondary);
-   padding: 2rem 4rem;
-   border-radius: 10px;
-   margin-top: 5rem;
+	background-color: var(--secondary);
+	padding: 2rem 4rem;
+	border-radius: 10px;
+	margin-top: 5rem;
 }
 
-.thedream>h2 {
-   font-size: 3rem;
-   font-family: 'Satisfy', cursive;
+.thedream > h2 {
+	font-size: 3rem;
+	font-family: 'Satisfy', cursive;
 }
 
-.thedream>p {
-   font-size: 1.25rem;
+.thedream > p {
+	font-size: 1.25rem;
 }
 
 .endofthedream {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   align-items: center;
-   margin-top: 5rem;
-   font-family: 'Satisfy', cursive;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 5rem;
+	font-family: 'Satisfy', cursive;
 }
 
-.endofthedream>.profile {
-   font-family: 'Inter', sans-serif;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   font-weight: 600;
+.endofthedream > .profile {
+	font-family: 'Inter', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
 }
 
-.endofthedream>.profile>p{
-   margin-top: 2rem;
+.endofthedream > .profile > p {
+	margin-top: 2rem;
 }
 
-.endofthedream>h1 {
-   font-size: clamp(5rem, 4vw, 9rem);
-   margin: 0;
-   margin-top: 3rem;
+.endofthedream > h1 {
+	font-size: clamp(5rem, 4vw, 9rem);
+	margin: 0;
+	margin-top: 3rem;
 }
 
 @media screen and (max-width: 1400px) {
-   .home>section {
-      flex-direction: column;
-   }
+	.home > section {
+		flex-direction: column;
+	}
 
-   .hero-content {
-      margin-top: 5rem;
-   }
+	.hero-content {
+		margin-top: 5rem;
+	}
 }
 
-
 @media screen and (max-width: 900px) {
-   .hero-title {
-      font-size: 6rem;
-   }
+	.hero-title {
+		font-size: 6rem;
+	}
 
-   .hero-content {
-      font-size: 1rem;
-   }
+	.hero-content {
+		font-size: 1rem;
+	}
 
-   .home>section {
-      padding: 6rem 0;
-   }
+	.home > section {
+		padding: 6rem 0;
+	}
+
+	.home > main > section {
+		border-radius: 0;
+	}
 }
 
 @media screen and (max-width: 720px) {
-   .home>main>article {
-      flex-direction: column;
-   }
+	.home > main > article {
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 600px) {
-   .hero-title {
-      font-size: 4.5rem;
-   }
+	.hero-title {
+		font-size: 4.5rem;
+	}
 
-   .hero-content {
-      font-size: 1rem;
-      padding: 0;
-   }
+	.hero-content {
+		font-size: 1rem;
+		padding: 0;
+	}
 
-   .home>section {
-      padding: 6rem 0;
-   }
+	.home > section {
+		padding: 6rem 0;
+	}
 }
 
 @media screen and (max-width: 470px) {
-   .hero-title {
-      font-size: 3.5rem;
-   }
+	.hero-title {
+		font-size: 4.5rem;
+	}
 
+	.home > section {
+		padding: 3rem 0;
+	}
 }

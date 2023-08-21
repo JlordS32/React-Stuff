@@ -31,49 +31,6 @@ function CareersLayout() {
 					<section className={styles['careers-items-container']}>
 						<Outlet />
 					</section>
-
-					<section>
-						<h2>What Awaits You:</h2>
-						<p>
-							<strong>Challenging Projects:</strong> Dive into projects
-							that test your skills and stretch your creativity. From
-							developing cutting-edge applications to troubleshooting
-							complex systems, every day is a new chance to thrive.
-						</p>
-						<p>
-							<strong>Collaborative Culture</strong>: We believe that the
-							best solutions emerge through collaboration. Our open and
-							inclusive environment fosters teamwork, where ideas flow
-							freely and innovation is a collective effort.
-						</p>
-						<p>
-							<strong>Learning and Growth</strong>: Your journey doesn't
-							end with the skills you bring. We invest in your growth,
-							offering workshops, training, and resources to keep you at
-							the forefront of the ever-evolving tech landscape.
-						</p>
-						<p>
-							<strong>Impactful Work</strong>: Be a part of something
-							bigger than yourself. Your contributions here have
-							real-world implications, shaping industries, transforming
-							user experiences, and driving technological progress.
-						</p>
-						<p>
-							<strong>Flexibility</strong>: We understand the importance
-							of work-life balance. With flexible work arrangements, you
-							can tailor your schedule to suit your individual needs and
-							optimize your productivity.
-						</p>
-
-						<h2>Join Our Team:</h2>
-						<p>
-							If you're ready to amplify your technical acumen, embrace
-							innovation, and be part of a company that values your
-							expertise, we invite you to explore our current openings.
-							Your next adventure in technology awaits come and define
-							the future with us at Conor Dream.
-						</p>
-					</section>
 				</main>
 			</div>
 		</div>
