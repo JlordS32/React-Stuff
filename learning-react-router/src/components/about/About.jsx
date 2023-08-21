@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/about.module.css';
 import { Navigate } from 'react-router-dom';
 import { scrollToTop } from '../careers/CareerDetails';
@@ -9,7 +9,9 @@ function About() {
 	// if (!user) {
 	// 	return <Navigate to="/" replace={true}/>
 	// }
-	scrollToTop();
+	useEffect(() => {
+		scrollToTop();
+	}, [])
 
 	return (
 		<div className={styles['about']}>

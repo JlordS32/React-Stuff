@@ -2,46 +2,56 @@ import React, { useEffect, useMemo } from 'react';
 import styles from '../../styles/careers.module.css';
 import { useLoaderData, Link } from 'react-router-dom';
 import { scrollToTop } from './CareerDetails';
+import { useQuery } from 'react-query';
 
-function Careers() {
-	const careers = useLoaderData();
-
+function Careers({ fetchCareers, fetchCareersById }) {
 	// TODO memoize/cache API Calls
 	scrollToTop();
+	const { isLoading, data, error, status } = useQuery('careers', fetchCareers);
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
+	if (status === 'error') {
+		return <div>Error: {error.message}</div>;
+	}
 
 	return (
 		<>
-			{useMemo(() => {
-				return careers?.map((career) => {
-					return (
-						<div
-							className={styles['career-item']}
-							key={career.id}
-						>
-							<Link to={career.id.toString()}>
-								<h2>{career.title}</h2>
-								<p>Based in {career.location}</p>
-							</Link>
-						</div>
-					);
-				});
-			}, [careers])}
+			{data?.map((career) => {
+				return (
+					<CareerItem
+						career={career}
+						fetchCareersById={fetchCareersById}
+					/>
+				);
+			})}
 		</>
 	);
 }
 
-export const careersLoader = async () => {
-	const res = await fetch('https://careersapi.vercel.app/api/careers');
+function CareerItem({ career, fetchCareersById }) {
+	const { id } = career;
+	const { data, isLoading } = useQuery(['career', id], () =>
+		fetchCareersById(id)
+	);
 
-	console.log('I have been ran');
-
-	const data = await res.json();
-
-	if (!res.ok) {
-		throw Error('Could not find fetch careers!');
-	}
-
-	return data;
-};
+	return (
+		<div
+			className={styles['career-item']}
+			key={id}
+		>
+			{isLoading ? (
+				<h1>Loading...</h1>
+			) : (
+				<Link to={data.id.toString()}>
+					<h2>{data.title}</h2>
+					<p>Based in {data.location}</p>
+				</Link>
+			)}
+		</div>
+	);
+}
 
 export default Careers;

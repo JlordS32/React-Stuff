@@ -15,8 +15,8 @@ import RootLayout from './layout/RootLayout';
 import Faq from './help/Faq';
 import Contact from './help/Contact';
 import CareersLayout from './layout/CareersLayout';
-import Careers, { careersLoader } from './careers/Careers';
-import CareerDetails, { careerDetailsLoader } from './careers/CareerDetails';
+import Careers from './careers/Careers';
+import CareerDetails from './careers/CareerDetails';
 import CareerNotFound from './careers/CareerNotFound';
 
 // React Query
@@ -33,14 +33,28 @@ function App() {
 }
 
 function AppRouter() {
-	
 	const fetchCareers = async () => {
 		const res = await fetch('http://careersapi.vercel.app/api/careers');
 		const data = await res.json();
 
+		if (!res.ok) {
+			throw Error('API call failed. Please check the url.');
+		}
+
 		return data;
 	};
-	
+
+	const fetchCareersById = async (id) => {
+		const res = await fetch(`http://careersapi.vercel.app/api/careers/${id}`);
+		const data = res.json();
+
+		if (!res.ok) {
+			throw Error('Could not find that career');
+		}
+
+		return data;
+	};
+
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route
@@ -72,19 +86,26 @@ function AppRouter() {
 				<Route
 					path='careers'
 					element={<CareersLayout />}
-					loader={fetchCareers}
-					errorElement={<CareerNotFound />}
+					errorElement={
+						<CareerNotFound
+							fetchCareersById={fetchCareersById}
+							fetchCareers={fetchCareers}
+						/>
+					}
 				>
 					<Route
 						index
-						element={<Careers />}
-						loader={fetchCareers}
+						element={
+							<Careers
+								fetchCareers={fetchCareers}
+								fetchCareersById={fetchCareersById}
+							/>
+						}
 					/>
 
 					<Route
 						path=':id'
-						element={<CareerDetails />}
-						loader={careerDetailsLoader}
+						element={<CareerDetails fetchCareersById={fetchCareersById} />}
 					/>
 				</Route>
 
