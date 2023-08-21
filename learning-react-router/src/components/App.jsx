@@ -34,7 +34,7 @@ function App() {
 
 function AppRouter() {
 	const fetchCareers = async () => {
-		const res = await fetch('http://careersapi.vercel.app/api/careers');
+		const res = await fetch('https://careersapi.vercel.app/api/careers');
 		const data = await res.json();
 
 		if (!res.ok) {
@@ -45,7 +45,7 @@ function AppRouter() {
 	};
 
 	const fetchCareersById = async (id) => {
-		const res = await fetch(`http://careersapi.vercel.app/api/careers/${id}`);
+		const res = await fetch(`https://careersapi.vercel.app/api/careers/${id}`);
 		const data = res.json();
 
 		if (!res.ok) {

@@ -24,6 +24,7 @@ function Careers({ fetchCareers, fetchCareersById }) {
 					<CareerItem
 						career={career}
 						fetchCareersById={fetchCareersById}
+						key={career.id}
 					/>
 				);
 			})}
